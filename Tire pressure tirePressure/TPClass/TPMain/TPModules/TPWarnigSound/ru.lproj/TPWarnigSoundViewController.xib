@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TPWarnigSoundViewController">
+            <connections>
+                <outlet property="alarm1" destination="NiF-1K-OoT" id="QYq-jS-qbo"/>
+                <outlet property="alarm2" destination="HW7-XE-tfA" id="HfE-er-iM4"/>
+                <outlet property="alarm3" destination="RdQ-aT-bbx" id="cPm-fA-rHT"/>
+                <outlet property="alarm4" destination="cNk-ZV-3Ch" id="j9U-xg-RNX"/>
+                <outlet property="alarm5" destination="6wb-d4-yv3" id="nUf-lk-Qcg"/>
+                <outlet property="chineseBtn" destination="4Ux-OX-1Ah" id="dME-q2-c9w"/>
+                <outlet property="englishBtn" destination="WLf-uy-FJN" id="dSP-YK-i54"/>
+                <outlet property="esBtn" destination="Wib-Xs-yCv" id="PE7-GT-QcX"/>
+                <outlet property="frBtn" destination="X3g-wJ-eii" id="jSI-Uh-F9k"/>
+                <outlet property="spainBtn" destination="bm7-zo-YAZ" id="76a-Bu-mPF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WLf-uy-FJN">
+                    <rect key="frame" x="136" y="107" width="102" height="31"/>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.52549019610000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="2Oh-Pw-eMN"/>
+                        <constraint firstAttribute="width" constant="102" id="b2B-DT-fk1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" title="英文">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="english:" destination="-1" eventType="touchUpInside" id="egO-x9-kvL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ux-OX-1Ah">
+                    <rect key="frame" x="26" y="107" width="102" height="31"/>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.52549019610000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="102" id="8Iw-g7-B8B"/>
+                        <constraint firstAttribute="height" constant="31" id="kdq-5P-ecX"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" title="中文">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="ok按钮"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="chinese:" destination="-1" eventType="touchUpInside" id="Dlm-8M-Y0R"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bm7-zo-YAZ">
+                    <rect key="frame" x="136" y="157" width="102" height="31"/>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.52549019610000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="102" id="XgE-IR-v4B"/>
+                        <constraint firstAttribute="height" constant="31" id="xog-Am-hL5"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" title="西班牙文">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="spnish:" destination="-1" eventType="touchUpInside" id="cyE-GH-mlk"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3g-wJ-eii">
+                    <rect key="frame" x="26" y="157" width="102" height="31"/>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.52549019610000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="102" id="8EN-jm-7ce"/>
+                        <constraint firstAttribute="height" constant="31" id="fdI-wy-8Wz"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" title="法文">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="french:" destination="-1" eventType="touchUpInside" id="g6m-mN-WyY"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HW7-XE-tfA">
+                    <rect key="frame" x="136" y="210" width="102" height="31"/>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.52549019610000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="Ggb-as-0Jt"/>
+                        <constraint firstAttribute="width" constant="102" id="LdK-Xc-FJE"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" title="Alarm2">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="alarmChange:" destination="-1" eventType="touchUpInside" id="nvS-jq-OsM"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NiF-1K-OoT">
+                    <rect key="frame" x="26" y="210" width="102" height="31"/>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.52549019610000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="bSO-Sb-lon"/>
+                        <constraint firstAttribute="width" constant="102" id="wDF-yX-yeQ"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" title="Alarm1">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="ok按钮"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="alarmChange:" destination="-1" eventType="touchUpInside" id="nbp-wT-1jf"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RdQ-aT-bbx">
+                    <rect key="frame" x="246" y="210" width="102" height="31"/>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.52549019610000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="DfV-kl-hGg"/>
+                        <constraint firstAttribute="width" constant="102" id="vhy-Wi-ilO"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" title="Alarm3">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="alarmChange:" destination="-1" eventType="touchUpInside" id="AIP-pi-ViF"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="105" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wb-d4-yv3">
+                    <rect key="frame" x="136" y="260" width="102" height="31"/>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.52549019610000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="102" id="Q4h-1l-6UR"/>
+                        <constraint firstAttribute="height" constant="31" id="d2S-2M-b2k"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" title="Alarm5">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="alarmChange:" destination="-1" eventType="touchUpInside" id="jd4-IP-uu9"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNk-ZV-3Ch">
+                    <rect key="frame" x="26" y="260" width="102" height="31"/>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.52549019610000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="QfV-BH-qag"/>
+                        <constraint firstAttribute="width" constant="102" id="ng7-jt-Xqw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" title="Alarm4">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="alarmChange:" destination="-1" eventType="touchUpInside" id="G44-xH-F9M"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gb3-OD-qBR">
+                    <rect key="frame" x="136" y="412" width="102" height="38"/>
+                    <color key="backgroundColor" white="0.69999999999999996" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="38" id="H57-Hb-bXM"/>
+                        <constraint firstAttribute="width" constant="102" id="a6V-KU-JpB"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                    <color key="tintColor" red="0.23529411759999999" green="0.52549019610000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="OK" backgroundImage="ok按钮">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wib-Xs-yCv">
+                    <rect key="frame" x="246" y="107" width="102" height="31"/>
+                    <color key="backgroundColor" red="0.23529411759999999" green="0.52549019610000003" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="102" id="QuJ-qr-SPV"/>
+                        <constraint firstAttribute="height" constant="31" id="dAg-DM-w5O"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="18"/>
+                    <state key="normal" title="俄文">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="russia:" destination="-1" eventType="touchUpInside" id="Cwh-TF-asw"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="RdQ-aT-bbx" firstAttribute="leading" secondItem="HW7-XE-tfA" secondAttribute="trailing" constant="8" id="14D-ge-sve"/>
+                <constraint firstItem="HW7-XE-tfA" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="2Ov-ka-ylU"/>
+                <constraint firstItem="cNk-ZV-3Ch" firstAttribute="top" secondItem="6wb-d4-yv3" secondAttribute="top" id="3OK-v8-htE"/>
+                <constraint firstItem="6wb-d4-yv3" firstAttribute="leading" secondItem="cNk-ZV-3Ch" secondAttribute="trailing" constant="8" id="9YV-XE-Ofb"/>
+                <constraint firstItem="HW7-XE-tfA" firstAttribute="leading" secondItem="NiF-1K-OoT" secondAttribute="trailing" constant="8" id="ELc-Ze-6rT"/>
+                <constraint firstItem="Wib-Xs-yCv" firstAttribute="leading" secondItem="WLf-uy-FJN" secondAttribute="trailing" constant="8" id="EqJ-ia-TnF"/>
+                <constraint firstItem="WLf-uy-FJN" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="87" id="LaC-2P-XDN"/>
+                <constraint firstItem="gb3-OD-qBR" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="QWy-qC-3FM"/>
+                <constraint firstItem="X3g-wJ-eii" firstAttribute="top" secondItem="bm7-zo-YAZ" secondAttribute="top" id="SYA-Ke-Ora"/>
+                <constraint firstItem="gb3-OD-qBR" firstAttribute="top" secondItem="6wb-d4-yv3" secondAttribute="bottom" constant="121" id="Y5K-al-UgG"/>
+                <constraint firstItem="bm7-zo-YAZ" firstAttribute="top" secondItem="WLf-uy-FJN" secondAttribute="bottom" constant="19" id="bgu-sU-y6I"/>
+                <constraint firstItem="NiF-1K-OoT" firstAttribute="top" secondItem="X3g-wJ-eii" secondAttribute="bottom" constant="22" id="c3w-5Q-TGC"/>
+                <constraint firstItem="HW7-XE-tfA" firstAttribute="top" secondItem="NiF-1K-OoT" secondAttribute="top" id="gfs-JU-7AD"/>
+                <constraint firstItem="6wb-d4-yv3" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="jfy-0n-cS5"/>
+                <constraint firstItem="WLf-uy-FJN" firstAttribute="leading" secondItem="4Ux-OX-1Ah" secondAttribute="trailing" constant="8" id="n4X-s1-FOI"/>
+                <constraint firstItem="6wb-d4-yv3" firstAttribute="top" secondItem="HW7-XE-tfA" secondAttribute="bottom" constant="19" id="qlM-hS-wXy"/>
+                <constraint firstItem="Wib-Xs-yCv" firstAttribute="top" secondItem="WLf-uy-FJN" secondAttribute="top" id="rGF-jf-rf8"/>
+                <constraint firstItem="bm7-zo-YAZ" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="t1F-j9-g6n"/>
+                <constraint firstItem="RdQ-aT-bbx" firstAttribute="top" secondItem="HW7-XE-tfA" secondAttribute="top" id="tHP-V2-k7e"/>
+                <constraint firstItem="bm7-zo-YAZ" firstAttribute="leading" secondItem="X3g-wJ-eii" secondAttribute="trailing" constant="8" id="tLj-BW-nmI"/>
+                <constraint firstItem="4Ux-OX-1Ah" firstAttribute="top" secondItem="WLf-uy-FJN" secondAttribute="top" id="uBX-dS-gRQ"/>
+                <constraint firstItem="WLf-uy-FJN" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="vUJ-8F-0V6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="-428" y="112"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ok按钮" width="102" height="29"/>
+    </resources>
+</document>
