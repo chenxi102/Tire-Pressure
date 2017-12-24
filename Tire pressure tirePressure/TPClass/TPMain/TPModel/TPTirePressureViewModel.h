@@ -9,16 +9,19 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSInteger){
+    TPTemperature_deInit ,
     TPTemperature_normal ,
     TPTemperature_waring
 }TPTemperatureType;
 
 typedef NS_ENUM(NSInteger){
+    TPTirePressure_deInit ,
     TPTirePressure_normal ,
     TPTirePressure_waring
 }TPTirePressureType;
 
 typedef NS_ENUM(NSInteger){
+    TPElectric_deInit ,
     TPElectric_normal ,
     TPElectric_waring
 }TPElectricType;

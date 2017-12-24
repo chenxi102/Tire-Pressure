@@ -364,6 +364,13 @@
 			path = TPMatch;
 			sourceTree = "<group>";
 		};
+		5DE36F271FEFED3500741AD0 /* TPTools */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TPTools;
+			sourceTree = "<group>";
+		};
 		5DFECE7B1FD578AD00D194D9 = {
 			isa = PBXGroup;
 			children = (
@@ -406,6 +413,7 @@
 		5DFECE9D1FD6CEAA00D194D9 /* TPPublic */ = {
 			isa = PBXGroup;
 			children = (
+				5DE36F271FEFED3500741AD0 /* TPTools */,
 				5DAF7B8E1FDA5EA3000F2A4E /* TPCategorys */,
 				5DAF7B8D1FDA5E86000F2A4E /* TPVendors */,
 			);

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "TPTirePressureViewModel.h"
 @interface TPInformationView : UIView
 
 @property (nonatomic, strong) UIImageView * electricImgV;       // 电量图
@@ -16,5 +16,6 @@
 @property (nonatomic, strong) UILabel * tempratureNumLab;       // 温度值
 @property (nonatomic, strong) UILabel * tempratureUnitLab;      // 温度单位
 
+- (void)refresh;
 
 @end
