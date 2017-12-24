@@ -7,31 +7,70 @@
 //
 
 #import "TPTirePressureViewController.h"
+#import "TPMatchViewController.h"
+#import "TPSettingViewController.h"
+#import "TPWarnigSoundViewController.h"
+#import "TPToolView.h"
 
 @interface TPTirePressureViewController ()
-
+@property (nonatomic, strong) TPToolView * toolView;
 @end
 
 @implementation TPTirePressureViewController
 
+
+// MARK: lifyCycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self normalUiconfig];
+    [self toolSetup];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+// MARK: UI config
+- (void)normalUiconfig {
+    self.navigationItem.titleView = [[UIImageView  alloc]initWithImage:[UIImage imageNamed:@"logo"]];
 }
-*/
+
+- (void)toolSetup {
+    
+    self.toolView = [[TPToolView alloc] initWithImages:@[@"ID", @"设置", @"警告音"] titles:@[@"ID", @"TPBaseSettingPage", @"TPMainMenuAlarm"] handleStrs:@[@"peidui", @"sheding", @"jinggaoyin"]];
+    [self.view addSubview:self.toolView];
+    self.toolView.layer.contents = (id)[UIImage imageNamed:@"菜单背景"].CGImage;
+    [self.toolView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.bottom.left.right.equalTo(@0);
+        make.height.equalTo(@55);
+    }];
+    @weak(self)
+    self.toolView.toolHandleBlock = ^(NSString *handleString) {
+        @strong(self)
+        [self performBlock:^{
+            if ([handleString isEqualToString:@"peidui"]) {
+                //
+                TPMatchViewController * vc = [TPMatchViewController new];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+            else if ([handleString isEqualToString:@"sheding"]){
+                Class cls = NSClassFromString(@"TPVersionViewController");
+                TPBaseViewController * vc = [cls new];
+//                TPSettingViewController * vc = [TPSettingViewController new];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+            else if ([handleString isEqualToString:@"jinggaoyin"]){
+                TPWarnigSoundViewController * vc = [[TPWarnigSoundViewController alloc]initWithNibName:@"TPWarnigSoundViewController" bundle:nil];
+                [self.navigationController pushViewController:vc animated:YES];
+            }
+        } afterDelay:0];
+    };
+}
+
+// MARK: function
+- (void)languageChanged {
+    [self.toolView refreshLanguage];
+}
 
 @end

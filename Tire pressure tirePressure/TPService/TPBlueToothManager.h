@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TPBlueToothService.h"
 
 @interface TPBlueToothManager : NSObject
 
+
++ (instancetype)shareInstance ;
+- (void)config ;
 @end

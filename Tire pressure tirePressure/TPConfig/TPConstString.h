@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TPConstString : NSObject
 
-@end
+
+extern NSString * AppLanguageString;
+
+
+
+
+
+
+// notice
+extern NSString * AppLanguageChangeNotify;

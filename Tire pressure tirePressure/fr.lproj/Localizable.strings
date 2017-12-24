@@ -5,3 +5,73 @@
   Created by Seth Chen on 2017/12/9.
   Copyright © 2017年 JianYiMei. All rights reserved.
 */
+
+
+"TPMainMenuTireMatch" = "Pneu correspondant";
+"TPMainMenuBaseSetting" = "Installation de base";
+"TPMainMenuAlarm" = "Avertissement";
+"TPMainMenuVersionInfo" = "Version";
+
+// 主页报警内容（左前轮报警）
+"TPMainPageAlarm" = "Avertissement";
+"TPMainPageAlarmType_FrontLaftWheel_lowPressure" = "Type d’avertissement: La pression du pneu avant gauche est basse";
+"TPMainPageAlarmType_FrontLaftWheel_highPressure" = "Type d’avertissement: La pression du pneu avant gauche est haute";
+"TPMainPageAlarmType_FrontLaftWheel_highTemprature" = "Type d’avertissement: La température du pneu avant gauche est haute";
+"TPMainPageAlarmCancel" = "annuler";
+"TPMainPageAlarmCheck" = "oui";
+
+
+// 主页报警内容（左后轮报警）
+"TPMainPageAlarmType_BackLaftWheel_lowPressure" = "Type d’avertissement: Lapression du pneu arrière gauche est basse";
+"TPMainPageAlarmType_BackLaftWheel_highPressure" = "Type d’avertissement: La pression du pneu arrière gauche est haute";
+"TPMainPageAlarmType_BackLaftWheel_highTemprature" = "Type d’avertissement: La température du pneu arrière gauche est haute";
+
+// 主页报警内容（右前轮报警）
+"TPMainPageAlarmType_FrontRightWheel_lowPressure" = "Type d’avertissement: La pression du pneu avant droit est basse";
+"TPMainPageAlarmType_FrontRightWheel_highPressure" = "Type d’avertissement: La pression du pneu avant droit est haute";
+"TPMainPageAlarmType_FrontRightWheel_highTemprature" = "Type d’avertissement: La température du pneu avant droit est haute";
+
+// 主页报警内容（右后轮报警）
+"TPMainPageAlarmType_BackRightWheel_lowPressure" = "Type d’avertissement: La pression du pneu arrière droit est basse";
+"TPMainPageAlarmType_BackRightWheel_highPressure" = "Type d’avertissement: La pression du pneu arrière droit est haute";
+"TPMainPageAlarmType_BackRightWheel_highTemprature" = "Type d’avertissement: La température du pneu arrière droit est haute";
+
+
+// 匹配页内容
+"TPMatchPage_MatchSetting" = "Pneu correspondant";
+"TPMatchPage_leftFrontWheel" = "Pneu avant gauche";
+"TPMatchPage_leftBackWheel" = "Pneu arrière gauche";
+"TPMatchPage_OK" = "Oui";
+"TPMatchPage_rightFrontWheel" = "Pneu avant droit";
+"TPMatchPage_rightBackWheel" = "Pneu arrière gauche";
+
+// 调胎页内容
+"TPTireMatchPage_TireSetting" = "Pneu exchange";
+"TPTireMatchPage_OK" = "Oui";
+
+// 基础设置页内容
+"TPBaseSettingPage" = "Installation";
+"TPBaseSettingPage_OK" = "Oui";
+"TPBaseSettingPage_PressureUnit" = "Unités de pression";
+"TPBaseSettingPage_TemperatureUnit" = "Unités de température";
+"TPBaseSettingPage_UpperLimitValueSetting" = "Installation de la valeur d’avertissement de la limite supérieure";
+"TPBaseSettingPage_LowerrLimitValueSetting" = "Installation de la valeur d’avertissement de la limite inférieure";
+"TPBaseSettingPage_EnterTireSetting" = "Entrer l’installation des pneu exchanges";
+
+
+// 警告声页内容
+"TPWarnigPage_Chinese" = "chinois";
+"TPWarnigPage_English" = "anglais";
+"TPWarnigPage_Russian" = "russe";
+"TPWarnigPage_French" = "français";
+"TPWarnigPage_Spanish" = "espagnol";
+"TPWarnigPage_OK" = "Oui";
+
+
+// 版本信息页内容
+"TPVersionPageInformation" = "version";
+"TPVersionPage_RestoreDefaultSetting" = "Rétablissement de paramètres par défaut";
+"TPVersionPage_Cancel" = "annuler";
+"TPVersionPage_OK" = "oui";
+
+

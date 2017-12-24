@@ -5,3 +5,75 @@
   Created by Seth Chen on 2017/12/9.
   Copyright © 2017年 JianYiMei. All rights reserved.
 */
+
+
+"TPMainMenuTireMatch" = "Подбор шин";
+"TPMainMenuBaseSetting" = "Основные настройки";
+"TPMainMenuAlarm" = "Тревога";
+"TPMainMenuVersionInfo" = "Версия";
+
+// 主页报警内容（左前轮报警）
+"TPMainPageAlarm" = "Тревога";
+"TPMainPageAlarmType_FrontLaftWheel_lowPressure" = "Тип тревоги: низкое давление в левой передней шине";
+"TPMainPageAlarmType_FrontLaftWheel_highPressure" = "Тип тревоги: высокое давление в левой передней шине";
+"TPMainPageAlarmType_FrontLaftWheel_highTemprature" = "Тип тревоги: высокая температура в левой передней шине";
+"TPMainPageAlarmCancel" = "отмена";
+"TPMainPageAlarmCheck" = "проверить";
+
+
+// 主页报警内容（左后轮报警）
+"TPMainPageAlarmType_BackLaftWheel_lowPressure" = "Тип тревоги: низкое давление в левой задней шине";
+"TPMainPageAlarmType_BackLaftWheel_highPressure" = "Тип тревоги: высокое давление в левой задней шине";
+"TPMainPageAlarmType_BackLaftWheel_highTemprature" = "Тип тревоги: высокая температура в левой задней шине";
+
+// 主页报警内容（右前轮报警）
+"TPMainPageAlarmType_FrontRightWheel_lowPressure" = "Тип тревоги: низкое далевние в правой передней шине";
+"TPMainPageAlarmType_FrontRightWheel_highPressure" = "Тип тревоги: высокое давление в правой передней шине";
+"TPMainPageAlarmType_FrontRightWheel_highTemprature" = "Тип тревоги: высокая температура в правой передней шине";
+
+// 主页报警内容（右后轮报警）
+"TPMainPageAlarmType_BackRightWheel_lowPressure" = "Тип тревоги: низкое давление в правой задней шине";
+"TPMainPageAlarmType_BackRightWheel_highPressure" = "Тип тревоги: высокое давление в правой задней шине";
+"TPMainPageAlarmType_BackRightWheel_highTemprature" = "Тип тревоги: высокая температура в правой задней шине";
+
+
+
+// 匹配页内容
+"TPMatchPage_MatchSetting" = "Настройки подбора";
+"TPMatchPage_leftFrontWheel" = "Левое переднее колесо";
+"TPMatchPage_leftBackWheel" = "Левое заднее колесо";
+"TPMatchPage_OK" = "OK";
+"TPMatchPage_rightFrontWheel" = "Правое переднее колесо";
+"TPMatchPage_rightBackWheel" = "Правое заднее колесо";
+
+// 调胎页内容
+"TPTireMatchPage_TireSetting" = "Обмен шин";
+"TPTireMatchPage_OK" = "OK";
+
+// 基础设置页内容
+"TPBaseSettingPage" = "Настройки";
+"TPBaseSettingPage_OK" = "OK";
+"TPBaseSettingPage_PressureUnit" = "Единица давления";
+"TPBaseSettingPage_TemperatureUnit" = "Единицы измерения температуры";
+"TPBaseSettingPage_UpperLimitValueSetting" = "Установка верхнего предела тревоги";
+"TPBaseSettingPage_LowerrLimitValueSetting" = "Установка нижнего предела тревоги";
+"TPBaseSettingPage_EnterTireSetting" = "Войти в настройку обмена шин";
+
+
+// 警告声页内容
+"TPWarnigPage_Chinese" = "Китайский";
+"TPWarnigPage_English" = "Английский";
+"TPWarnigPage_Russian" = "Русский";
+"TPWarnigPage_French" = "Французский";
+"TPWarnigPage_Spanish" = "Испанский";
+"TPWarnigPage_OK" = "OK";
+
+
+// 版本信息页内容
+"TPVersionPageInformation" = "Версия";
+"TPVersionPage_RestoreDefaultSetting" = "Восстановить параметры по умолчанию";
+"TPVersionPage_Cancel" = "Отмена";
+"TPVersionPage_OK" = "OK";
+
+
+

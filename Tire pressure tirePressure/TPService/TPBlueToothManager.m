@@ -7,7 +7,24 @@
 //
 
 #import "TPBlueToothManager.h"
+#import "TPBlueToothService.h"
 
 @implementation TPBlueToothManager
+
+
++ (instancetype)shareInstance {
+    
+    static TPBlueToothManager *sigle;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sigle = [TPBlueToothManager new];
+    });
+    return sigle;
+}
+
+- (void)config
+{
+    [[TPBlueToothService shareInstance] start];
+}
 
 @end

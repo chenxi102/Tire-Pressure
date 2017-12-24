@@ -23,6 +23,7 @@
                 <outlet property="alarm4" destination="cNk-ZV-3Ch" id="j9U-xg-RNX"/>
                 <outlet property="alarm5" destination="6wb-d4-yv3" id="nUf-lk-Qcg"/>
                 <outlet property="chineseBtn" destination="4Ux-OX-1Ah" id="dME-q2-c9w"/>
+                <outlet property="confimBtn" destination="gb3-OD-qBR" id="se5-qm-f1c"/>
                 <outlet property="englishBtn" destination="WLf-uy-FJN" id="dSP-YK-i54"/>
                 <outlet property="esBtn" destination="Wib-Xs-yCv" id="PE7-GT-QcX"/>
                 <outlet property="frBtn" destination="X3g-wJ-eii" id="jSI-Uh-F9k"/>
@@ -323,7 +324,7 @@
                 <constraint firstItem="WLf-uy-FJN" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="vUJ-8F-0V6"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
-            <point key="canvasLocation" x="-428" y="112"/>
+            <point key="canvasLocation" x="-502" y="39"/>
         </view>
     </objects>
     <resources>

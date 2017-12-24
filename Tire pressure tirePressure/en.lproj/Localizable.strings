@@ -5,3 +5,72 @@
   Created by Seth Chen on 2017/12/9.
   Copyright © 2017年 JianYiMei. All rights reserved.
 */
+
+
+"TPMainMenuTireMatch" = "Tire Match";
+"TPMainMenuBaseSetting" = "Setting";
+"TPMainMenuAlarm" = "Alarm";
+"TPMainMenuVersionInfo" = "Version";
+
+// 主页报警内容（左前轮报警）
+"TPMainPageAlarm" = "Alarm";
+"TPMainPageAlarmType_FrontLaftWheel_lowPressure" = "Alarm type: Left front tire low pressure";
+"TPMainPageAlarmType_FrontLaftWheel_highPressure" = "Alarm type: Left front tire high pressure";
+"TPMainPageAlarmType_FrontLaftWheel_highTemprature" = "Alarm type: Left front tire high temperature";
+"TPMainPageAlarmCancel" = "Cancel";
+"TPMainPageAlarmCheck" = "Check";
+
+
+// 主页报警内容（左后轮报警）
+"TPMainPageAlarmType_BackLaftWheel_lowPressure" = "Alarm type: Left rear tire low pressure";
+"TPMainPageAlarmType_BackLaftWheel_highPressure" = "Alarm type: Left rear tire high pressure";
+"TPMainPageAlarmType_BackLaftWheel_highTemprature" = "Alarm type: Left rear tire high temperature";
+
+// 主页报警内容（右前轮报警）
+"TPMainPageAlarmType_FrontRightWheel_lowPressure" = "Alarm type: Right front tire low pressure";
+"TPMainPageAlarmType_FrontRightWheel_highPressure" = "Alarm type: Right front tire high pressure";
+"TPMainPageAlarmType_FrontRightWheel_highTemprature" = "Alarm type: Right front tire high temperature";
+
+// 主页报警内容（右后轮报警）
+"TPMainPageAlarmType_BackRightWheel_lowPressure" = "Alarm type: Right rear tire low pressure";
+"TPMainPageAlarmType_BackRightWheel_highPressure" = "Alarm type: Right rear tire low pressure";
+"TPMainPageAlarmType_BackRightWheel_highTemprature" = "Alarm type: Right rear tire high temperature";
+
+
+
+// 匹配页内容
+"TPMatchPage_MatchSetting" = "Match setting";
+"TPMatchPage_leftFrontWheel" = "Left front tire";
+"TPMatchPage_leftBackWheel" = "Left rear tire";
+"TPMatchPage_OK" = "OK";
+"TPMatchPage_rightFrontWheel" = "Right front tire";
+"TPMatchPage_rightBackWheel" = "Right rear tire";
+
+// 调胎页内容
+"TPTireMatchPage_TireSetting" = "Tire exchange";
+"TPTireMatchPage_OK" = "OK";
+
+// 基础设置页内容
+"TPBaseSettingPage" = "Setting";
+"TPBaseSettingPage_OK" = "OK";
+"TPBaseSettingPage_PressureUnit" = "Pressure unit";
+"TPBaseSettingPage_TemperatureUnit" = "Temperature unit";
+"TPBaseSettingPage_UpperLimitValueSetting" = "Upper limit alarm value setting";
+"TPBaseSettingPage_LowerrLimitValueSetting" = "Lower limit alarm value setting";
+"TPBaseSettingPage_EnterTireSetting" = "Enter the tire setting";
+
+
+// 警告声页内容
+"TPWarnigPage_Chinese" = "Chinese";
+"TPWarnigPage_English" = "English";
+"TPWarnigPage_Russian" = "Russian";
+"TPWarnigPage_French" = "French";
+"TPWarnigPage_Spanish" = "Spanish";
+"TPWarnigPage_OK" = "OK";
+
+// 版本信息页内容
+"TPVersionPageInformation" = "Version information";
+"TPVersionPage_RestoreDefaultSetting" = "Restore the factory default setting";
+"TPVersionPage_Cancel" = "Cancel";
+"TPVersionPage_OK" = "OK";
+

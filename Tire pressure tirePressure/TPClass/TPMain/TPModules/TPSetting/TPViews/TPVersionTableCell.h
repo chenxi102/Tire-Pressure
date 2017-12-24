@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface TPVersionTableCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *contentLab;
 
 @end

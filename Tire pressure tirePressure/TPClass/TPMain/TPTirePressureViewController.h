@@ -6,8 +6,8 @@
 //  Copyright © 2017年 JianYiMei. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "TPBaseViewController.h"
 
-@interface TPTirePressureViewController : UIViewController
+@interface TPTirePressureViewController : TPBaseViewController
 
 @end

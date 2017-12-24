@@ -16,7 +16,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.navigationBar setBackgroundImage:[UIImage creatimageWithColor:[UIColor colorWithRed:90/255. green:90/255. blue:90/255. alpha:.7]] forBarMetrics:UIBarMetricsDefault];
+    
+    //    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"黑色背景"]];
+    self.view.layer.contents = (id)[UIImage imageNamed:@"黑色背景"].CGImage;
 }
 
 - (void)didReceiveMemoryWarning {

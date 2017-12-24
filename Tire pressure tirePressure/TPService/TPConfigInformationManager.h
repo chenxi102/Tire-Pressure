@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+@interface TPConfigInfo : NSObject
+
+@end
+
+
 @interface TPConfigInformationManager : NSObject
+
+
 
 @end

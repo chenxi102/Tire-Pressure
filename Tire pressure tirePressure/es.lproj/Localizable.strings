@@ -5,3 +5,74 @@
   Created by Seth Chen on 2017/12/9.
   Copyright © 2017年 JianYiMei. All rights reserved.
 */
+
+
+"TPMainMenuTireMatch" = "Emparejamiento del neumático";
+"TPMainMenuBaseSetting" = "Configuración";
+"TPMainMenuAlarm" = "Alarma";
+"TPMainMenuVersionInfo" = "Versión";
+
+// 主页报警内容（左前轮报警）
+"TPMainPageAlarm" = "Alarma";
+"TPMainPageAlarmType_FrontLaftWheel_lowPressure" = "Tipo de alarma: La presión del neumático delantero izquierdo es baja.";
+"TPMainPageAlarmType_FrontLaftWheel_highPressure" = "Tipo de alarma: La presión del neumático delantero izquierdo es alta.";
+"TPMainPageAlarmType_FrontLaftWheel_highTemprature" = "Tipo de alarma: La temperatura del neumático delantero izquierdo es alta.";
+"TPMainPageAlarmCancel" = "Cancelar";
+"TPMainPageAlarmCheck" = "Comprobar";
+
+
+// 主页报警内容（左后轮报警）
+"TPMainPageAlarmType_BackLaftWheel_lowPressure" = "Tipo de alarma: La presión del neumático trasero izquierdo es baja";
+"TPMainPageAlarmType_BackLaftWheel_highPressure" = "Tipo de alarma: La presión del neumático trasero izquierdo es alta";
+"TPMainPageAlarmType_BackLaftWheel_highTemprature" = "Tipo de alarma: La temperatura del neumático trasero izquierdo es alta";
+
+// 主页报警内容（右前轮报警）
+"TPMainPageAlarmType_FrontRightWheel_lowPressure" = "Tipo de alarma: La presión del neumático delantero derecho es baja";
+"TPMainPageAlarmType_FrontRightWheel_highPressure" = "Tipo de alarma: La presión del neumático delantero derecho es alta";
+"TPMainPageAlarmType_FrontRightWheel_highTemprature" = "Tipo de alarma: La temperatura del neumático delantero derecho es alta";
+
+// 主页报警内容（右后轮报警）
+"TPMainPageAlarmType_BackRightWheel_lowPressure" = "Tipo de alarma: La presión del neumático trasero derecho es baja";
+"TPMainPageAlarmType_BackRightWheel_highPressure" = "Tipo de alarma: La presión del neumático trasero derecho es alta";
+"TPMainPageAlarmType_BackRightWheel_highTemprature" = "Tipo de alarma: La temperatura del neumático trasero derecho es alta";
+
+
+
+// 匹配页内容
+"TPMatchPage_MatchSetting" = "Configuración del coincidencia";
+"TPMatchPage_leftFrontWheel" = "Neumático delantero izquierdo";
+"TPMatchPage_leftBackWheel" = "Neumático trasero izquierdo";
+"TPMatchPage_OK" = "OK";
+"TPMatchPage_rightFrontWheel" = "Neumático delantero derecho";
+"TPMatchPage_rightBackWheel" = "Neumático trasero derecho";
+
+// 调胎页内容
+"TPTireMatchPage_TireSetting" = "Intercambio de neumáticos";
+"TPTireMatchPage_OK" = "OK";
+
+// 基础设置页内容
+"TPBaseSettingPage" = "Configuración";
+"TPBaseSettingPage_OK" = "OK";
+"TPBaseSettingPage_PressureUnit" = "Unidad de presión";
+"TPBaseSettingPage_TemperatureUnit" = "Unidad de temperatura";
+"TPBaseSettingPage_UpperLimitValueSetting" = "Configuración del valor máximo de alarma";
+"TPBaseSettingPage_LowerrLimitValueSetting" = "Configuración del valor mínimo de alarma";
+"TPBaseSettingPage_EnterTireSetting" = "Entrar en la configuración del neumático";
+
+
+// 警告声页内容
+"TPWarnigPage_Chinese" = "Chino";
+"TPWarnigPage_English" = "Inglés";
+"TPWarnigPage_Russian" = "Ruso";
+"TPWarnigPage_French" = "Francés";
+"TPWarnigPage_Spanish" = "Español";
+"TPWarnigPage_OK" = "OK";
+
+
+// 版本信息页内容
+"TPVersionPageInformation" = "Informaciones de versión";
+"TPVersionPage_RestoreDefaultSetting" = "Restaurar la configuración de fábrica";
+"TPVersionPage_Cancel" = "Cancelar";
+"TPVersionPage_OK" = "OK";
+
+

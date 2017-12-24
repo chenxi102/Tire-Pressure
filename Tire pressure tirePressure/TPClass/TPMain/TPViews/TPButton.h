@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface TPButton : UIButton
-
+@property (nonatomic, copy) NSString * handleStr;
 @end

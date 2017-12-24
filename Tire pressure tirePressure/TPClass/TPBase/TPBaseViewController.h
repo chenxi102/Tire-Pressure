@@ -10,4 +10,7 @@
 
 @interface TPBaseViewController : UIViewController
 
+// language notify
+- (void)languageChanged;
+
 @end

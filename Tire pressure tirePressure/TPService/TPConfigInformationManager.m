@@ -1,3 +1,4 @@
+
 //
 //  TPConfigInformationManager.m
 //  Tire pressure tirePressure
@@ -9,5 +10,13 @@
 #import "TPConfigInformationManager.h"
 
 @implementation TPConfigInformationManager
+
+@end
+
+
+
+
+
+@implementation TPConfigInfo
 
 @end

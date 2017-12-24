@@ -1,5 +1,5 @@
 //
-//  VBBlueToothManager.h
+//  TPBlueToothService.h
 //
 //  Created by Seth on 16/5/5.
 //  Copyright © 2016年 detu. All rights reserved.
@@ -19,7 +19,7 @@
 
 
 
-@interface VBBlueToothManager : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate>
+@interface TPBlueToothService : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate>
 
 @property (strong, nonatomic) CBCentralManager *manager;
 @property (strong, nonatomic) CBPeripheral *peripheral;
@@ -34,6 +34,6 @@
 #pragma mark - Methods for controlling the joofunn Dartboard
 
 + (instancetype)shareInstance ;
-- (VBBlueToothManager *) start;
+- (TPBlueToothService *) start;
 - (void) writeData:(NSData *)data res:(void(^)(NSData *data))res;
 @end

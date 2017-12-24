@@ -5,3 +5,80 @@
   Created by Seth Chen on 2017/12/9.
   Copyright © 2017年 JianYiMei. All rights reserved.
 */
+
+
+"TPMainMenuTireMatch" = "轮胎匹配";
+"TPMainMenuBaseSetting" = "基础设置";
+"TPMainMenuAlarm" = "警告声";
+"TPMainMenuVersionInfo" = "版本信息";
+
+// 主页报警内容（左前轮报警）
+"TPMainPageAlarm" = "轮胎有警告";
+"TPMainPageAlarmType_FrontLaftWheel_lowPressure" = "警告类型：左前轮胎气压低";
+"TPMainPageAlarmType_FrontLaftWheel_highPressure" = "警告类型：左前轮胎气压高";
+"TPMainPageAlarmType_FrontLaftWheel_highTemprature" = "警告类型：左前轮胎温度高";
+"TPMainPageAlarmCancel" = "取消";
+"TPMainPageAlarmCheck" = "查看";
+
+// 主页报警内容（左后轮报警）
+"TPMainPageAlarmType_BackLaftWheel_lowPressure" = "警告类型：左后轮胎气压低";
+"TPMainPageAlarmType_BackLaftWheel_highPressure" = "警告类型：左后轮胎气压高";
+"TPMainPageAlarmType_BackLaftWheel_highTemprature" = "警告类型：左后轮胎温度高";
+
+// 主页报警内容（右前轮报警）
+"TPMainPageAlarmType_FrontRightWheel_lowPressure" = "警告类型：右前轮胎气压低";
+"TPMainPageAlarmType_FrontRightWheel_highPressure" = "警告类型：右前轮胎气压高";
+"TPMainPageAlarmType_FrontRightWheel_highTemprature" = "警告类型：右前轮胎温度高";
+
+// 主页报警内容（右后轮报警）
+"TPMainPageAlarmType_BackRightWheel_lowPressure" = "警告类型：右后轮胎气压低";
+"TPMainPageAlarmType_BackRightWheel_highPressure" = "警告类型：右后轮胎气压高";
+"TPMainPageAlarmType_BackRightWheel_highTemprature" = "警告类型：右后轮胎温度高";
+
+
+// 匹配页内容
+"TPMatchPage_MatchSetting" = "匹配设置";
+"TPMatchPage_leftFrontWheel" = "左前轮";
+"TPMatchPage_leftBackWheel" = "左后轮";
+"TPMatchPage_OK" = "确定";
+"TPMatchPage_rightFrontWheel" = "右前轮";
+"TPMatchPage_rightBackWheel" = "右后轮";
+
+// 调胎页内容
+"TPTireMatchPage_TireSetting" = "调胎设置";
+"TPTireMatchPage_OK" = "确定";
+
+// 基础设置页内容
+"TPBaseSettingPage" = "设置";
+"TPBaseSettingPage_OK" = "确定";
+"TPBaseSettingPage_PressureUnit" = "压力单位";
+"TPBaseSettingPage_TemperatureUnit" = "温度单位";
+"TPBaseSettingPage_UpperLimitValueSetting" = "上限警报值设置";
+"TPBaseSettingPage_LowerrLimitValueSetting" = "下限警报值设置";
+"TPBaseSettingPage_EnterTireSetting" = "进入调胎设置";
+
+
+// 警告声页内容
+"TPWarnigPage_Chinese" = "中文";
+"TPWarnigPage_English" = "英文";
+"TPWarnigPage_Russian" = "俄文";
+"TPWarnigPage_French" = "法文";
+"TPWarnigPage_Spanish" = "西班牙文";
+"TPWarnigPage_OK" = "确定";
+
+
+// 版本信息页内容
+"TPVersionPageInformation" = "版本信息";
+"TPVersionPage_RestoreDefaultSetting" = "恢复默认设置";
+"TPVersionPage_Cancel" = "取消";
+"TPVersionPage_OK" = "确定";
+
+
+
+
+
+
+
+
+
+

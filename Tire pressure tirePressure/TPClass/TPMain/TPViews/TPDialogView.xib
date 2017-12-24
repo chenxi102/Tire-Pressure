@@ -1,18 +1,95 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13142" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12042"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="TPDialogView">
+            <rect key="frame" x="0.0" y="0.0" width="270" height="170"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提示" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i30-fg-bQY">
+                    <rect key="frame" x="0.0" y="0.0" width="270" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="MiA-Py-3Mf"/>
+                        <constraint firstAttribute="width" constant="270" id="dGl-xZ-oEx"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我是内容" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G8y-b3-jtY">
+                    <rect key="frame" x="0.0" y="35" width="270" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="ant-ed-pGn"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BRA-gv-HFc">
+                    <rect key="frame" x="16" y="103" width="112" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="9SA-cT-MRC"/>
+                    </constraints>
+                    <state key="normal" title="取消" backgroundImage="取消按钮">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="线" translatesAutoresizingMaskIntoConstraints="NO" id="dIG-Di-Vb0">
+                    <rect key="frame" x="0.0" y="35" width="270" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="gna-05-QQA"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l5i-tB-PKH">
+                    <rect key="frame" x="142" y="103" width="112" height="35"/>
+                    <state key="normal" title="确定" backgroundImage="确定按钮">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.12941176470588234" green="0.1803921568627451" blue="0.31764705882352939" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="l5i-tB-PKH" firstAttribute="leading" secondItem="BRA-gv-HFc" secondAttribute="trailing" constant="14" id="6K3-bo-7FD"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="l5i-tB-PKH" secondAttribute="trailing" constant="16" id="787-mu-ACN"/>
+                <constraint firstItem="BRA-gv-HFc" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Dne-1N-bJs"/>
+                <constraint firstItem="l5i-tB-PKH" firstAttribute="top" secondItem="BRA-gv-HFc" secondAttribute="top" id="GE3-aZ-4c0"/>
+                <constraint firstItem="G8y-b3-jtY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="KPV-nM-FRm"/>
+                <constraint firstItem="i30-fg-bQY" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="M3G-sB-Iny"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="dIG-Di-Vb0" secondAttribute="trailing" id="NwT-FR-crM"/>
+                <constraint firstItem="G8y-b3-jtY" firstAttribute="top" secondItem="dIG-Di-Vb0" secondAttribute="bottom" constant="-2" id="PDh-jG-MoA"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="G8y-b3-jtY" secondAttribute="trailing" id="SCY-uu-kPL"/>
+                <constraint firstItem="i30-fg-bQY" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="T4u-Kf-7mE"/>
+                <constraint firstItem="l5i-tB-PKH" firstAttribute="height" secondItem="BRA-gv-HFc" secondAttribute="height" id="TYd-Wm-3yY"/>
+                <constraint firstItem="i30-fg-bQY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="awD-ue-aN3"/>
+                <constraint firstItem="dIG-Di-Vb0" firstAttribute="top" secondItem="i30-fg-bQY" secondAttribute="bottom" constant="-5" id="bRw-rN-rG7"/>
+                <constraint firstItem="BRA-gv-HFc" firstAttribute="top" secondItem="G8y-b3-jtY" secondAttribute="bottom" constant="8" id="gPu-vW-GR4"/>
+                <constraint firstItem="dIG-Di-Vb0" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="lUV-5U-f3H"/>
+                <constraint firstItem="BRA-gv-HFc" firstAttribute="width" secondItem="l5i-tB-PKH" secondAttribute="width" id="m9C-1n-uDl"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="cancelBtn" destination="BRA-gv-HFc" id="qUc-XK-XMg"/>
+                <outlet property="confimBtn" destination="l5i-tB-PKH" id="Ym1-bw-eX1"/>
+                <outlet property="contentLabel" destination="G8y-b3-jtY" id="BZg-Pr-f3T"/>
+                <outlet property="titleLabel" destination="i30-fg-bQY" id="agj-A0-rkm"/>
+            </connections>
+            <point key="canvasLocation" x="32" y="65"/>
         </view>
     </objects>
+    <resources>
+        <image name="取消按钮" width="101" height="34"/>
+        <image name="确定按钮" width="106" height="34"/>
+        <image name="线" width="298" height="2"/>
+    </resources>
 </document>

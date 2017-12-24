@@ -8,6 +8,10 @@
 
 #import "TPConstString.h"
 
-@implementation TPConstString
 
-@end
+
+
+
+// notice
+NSString const * AppLanguageChangeNotify = @"AppLanguageChangeNotify";
+

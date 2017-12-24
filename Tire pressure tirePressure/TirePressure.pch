@@ -9,7 +9,14 @@
 #ifndef TirePressure_pch
 #define TirePressure_pch
 
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#import "Macros.h"
+#import "TPConstString.h"
+#import "TPLanguageManager.h"
+#import "Masonry.h"
+#import "Categary.h"
+#import "TPButton.h"
+#import "TPDialogView.h"
 
 #endif /* TirePressure_pch */

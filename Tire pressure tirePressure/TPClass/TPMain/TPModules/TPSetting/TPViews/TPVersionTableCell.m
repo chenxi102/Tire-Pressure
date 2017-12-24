@@ -12,6 +12,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.backgroundColor = [UIColor clearColor];
+    self.alpha = 1;
     // Initialization code
 }
 
