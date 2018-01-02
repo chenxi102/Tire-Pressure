@@ -26,6 +26,7 @@ typedef NS_ENUM(NSInteger){
     TPElectric_waring
 }TPElectricType;
 
+// 1bar=1kgf/cm2=100kpa=14.5psi
 @interface TPTirePressureViewModel : NSObject
 
 @end

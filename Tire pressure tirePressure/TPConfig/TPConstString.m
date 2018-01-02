@@ -10,6 +10,13 @@
 
 
 
+NSString const * TPTemperatureTypeKey = @"TPTemperatureTypeKey";
+NSString const * TPTirePressureTypeKey = @"TPTirePressureTypeKey";
+
+NSString const * TPWarningElectricKey = @"TPWarningElectricKey";
+NSString const * TPWarningTopTirepressureKey = @"TPWarningTopTirepressureKey";
+NSString const * TPWarningDownTirepressureKey = @"TPWarningDownTirepressureKey";
+NSString const * TPWarningTempratureKey = @"TPWarningTempratureKey";
 
 
 // notice

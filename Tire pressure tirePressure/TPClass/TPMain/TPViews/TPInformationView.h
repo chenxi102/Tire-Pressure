@@ -16,6 +16,10 @@
 @property (nonatomic, strong) UILabel * tempratureNumLab;       // 温度值
 @property (nonatomic, strong) UILabel * tempratureUnitLab;      // 温度单位
 
-- (void)refresh;
+@property (nonatomic, assign) int electric;
+@property (nonatomic, assign) int tirepressure;
+@property (nonatomic, assign) int temprature;
+
+- (void)refreshStatesWithDisInit:(BOOL)abool;
 
 @end

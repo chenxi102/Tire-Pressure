@@ -18,5 +18,6 @@
 #import "Categary.h"
 #import "TPButton.h"
 #import "TPDialogView.h"
+#import "TPDataCenter.h"
 
 #endif /* TirePressure_pch */

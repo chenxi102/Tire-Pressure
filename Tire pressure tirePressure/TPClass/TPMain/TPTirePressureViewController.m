@@ -19,22 +19,27 @@
 @property (nonatomic, strong) TPInformationView * rightFrontView;
 @property (nonatomic, strong) TPInformationView * leftBackView;
 @property (nonatomic, strong) TPInformationView * rightBackView;
+
+@property (nonatomic, strong) NSTimer * DataTimer;
 @end
 
 @implementation TPTirePressureViewController
 
-
 // MARK: lifyCycle
+- (void)didReceiveMemoryWarning {[super didReceiveMemoryWarning];}
+- (void)dealloc {}
+- (void)viewWillAppear:(BOOL)animated {[super viewWillAppear:animated];}
+- (void)viewDidAppear:(BOOL)animated {[super viewDidAppear:animated];}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self normalUiconfig];
     [self toolSetup];
+    @weak(self);
+    _DataTimer = [NSTimer scheduledTimerWithTimeInterval:5 repeats:YES block:^(NSTimer * _Nonnull timer) {
+        @strong(self);
+        [self loadData];
+    }];
 }
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-}
-
 
 // MARK: UI config
 - (void)normalUiconfig {
@@ -57,6 +62,7 @@
         make.bottom.equalTo(imgv.mas_centerY).offset(-45);
         make.top.equalTo(@119);
     }];
+    
     
     _leftBackView = [TPInformationView new];
     [self.view addSubview:_leftBackView];
@@ -89,6 +95,7 @@
         make.height.equalTo(self.leftFrontView.mas_height);
         make.top.equalTo(imgv.mas_centerY).offset(45);
     }];
+    [self refreshDisplay:NO];
 }
 
 - (void)toolSetup {
@@ -110,9 +117,9 @@
                 [self.navigationController pushViewController:vc animated:YES];
             }
             else if ([handleString isEqualToString:@"sheding"]){
-                Class cls = NSClassFromString(@"TPVersionViewController");
-                TPBaseViewController * vc = [cls new];
-//                TPSettingViewController * vc = [TPSettingViewController new];
+//                Class cls = NSClassFromString(@"TPVersionViewController");
+//                TPBaseViewController * vc = [cls new];
+                TPSettingViewController * vc = [TPSettingViewController new];
                 [self.navigationController pushViewController:vc animated:YES];
             }
             else if ([handleString isEqualToString:@"jinggaoyin"]){
@@ -121,6 +128,22 @@
             }
         } afterDelay:0];
     };
+}
+
+// MARK: load Data
+- (void)loadData {
+    self.leftFrontView.electric = 90;
+    self.leftBackView.electric = 10;
+    self.rightFrontView.electric = 50;
+    self.rightBackView.electric = 2;
+    [self refreshDisplay:YES];
+}
+
+- (void)refreshDisplay:(BOOL)abool {
+    [self.leftFrontView refreshStatesWithDisInit:abool];
+    [self.leftBackView refreshStatesWithDisInit:abool];
+    [self.rightFrontView refreshStatesWithDisInit:abool];
+    [self.rightBackView refreshStatesWithDisInit:abool];
 }
 
 // MARK: function

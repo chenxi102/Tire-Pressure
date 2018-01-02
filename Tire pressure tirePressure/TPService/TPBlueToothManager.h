@@ -14,4 +14,7 @@
 
 + (instancetype)shareInstance ;
 - (void)config ;
+
+
+
 @end

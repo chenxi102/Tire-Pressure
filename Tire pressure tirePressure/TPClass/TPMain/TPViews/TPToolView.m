@@ -22,6 +22,7 @@
 @property (nonatomic, copy) NSArray <NSString *>* handleStrs;   // titles
 
 @property (nonatomic, strong) NSMutableArray <UILabel *>* labels;        // titles
+@property (nonatomic, strong) NSTimer * timer ;
 @end
 
 @implementation TPToolView

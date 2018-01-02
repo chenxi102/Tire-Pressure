@@ -51,6 +51,9 @@
 		5DAF7C061FDEC864000F2A4E /* TPSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAF7C051FDEC864000F2A4E /* TPSettingViewController.m */; };
 		5DAF7C091FDEC87A000F2A4E /* TPMatchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAF7C081FDEC87A000F2A4E /* TPMatchViewController.m */; };
 		5DAF7C111FE0108E000F2A4E /* TPWarnigSoundViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAF7C0F1FE0108E000F2A4E /* TPWarnigSoundViewController.m */; };
+		5DE36F291FF12DDA00741AD0 /* TPSettingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5DE36F281FF12DDA00741AD0 /* TPSettingViewController.xib */; };
+		5DE36F2C1FF3D61B00741AD0 /* TPAppUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE36F2B1FF3D61B00741AD0 /* TPAppUtil.m */; };
+		5DE36F301FF3D66A00741AD0 /* TPDataCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DE36F2F1FF3D66A00741AD0 /* TPDataCenter.m */; };
 		5DFECE891FD578AD00D194D9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFECE881FD578AD00D194D9 /* AppDelegate.m */; };
 		5DFECE8C1FD578AD00D194D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFECE8B1FD578AD00D194D9 /* ViewController.m */; };
 		5DFECE8F1FD578AD00D194D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DFECE8D1FD578AD00D194D9 /* Main.storyboard */; };
@@ -147,6 +150,11 @@
 		5DAF7C081FDEC87A000F2A4E /* TPMatchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPMatchViewController.m; sourceTree = "<group>"; };
 		5DAF7C0E1FE0108E000F2A4E /* TPWarnigSoundViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPWarnigSoundViewController.h; sourceTree = "<group>"; };
 		5DAF7C0F1FE0108E000F2A4E /* TPWarnigSoundViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPWarnigSoundViewController.m; sourceTree = "<group>"; };
+		5DE36F281FF12DDA00741AD0 /* TPSettingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TPSettingViewController.xib; sourceTree = "<group>"; };
+		5DE36F2A1FF3D61B00741AD0 /* TPAppUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPAppUtil.h; sourceTree = "<group>"; };
+		5DE36F2B1FF3D61B00741AD0 /* TPAppUtil.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPAppUtil.m; sourceTree = "<group>"; };
+		5DE36F2E1FF3D66A00741AD0 /* TPDataCenter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPDataCenter.h; sourceTree = "<group>"; };
+		5DE36F2F1FF3D66A00741AD0 /* TPDataCenter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPDataCenter.m; sourceTree = "<group>"; };
 		5DFECE841FD578AD00D194D9 /* Tire pressure tirePressure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tire pressure tirePressure.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5DFECE871FD578AD00D194D9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5DFECE881FD578AD00D194D9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -340,6 +348,7 @@
 				5D8ACBEB1FE63B3D003985C3 /* TPViews */,
 				5DAF7C041FDEC864000F2A4E /* TPSettingViewController.h */,
 				5DAF7C051FDEC864000F2A4E /* TPSettingViewController.m */,
+				5DE36F281FF12DDA00741AD0 /* TPSettingViewController.xib */,
 				5D8ACBEA1FE63B32003985C3 /* TPVCS */,
 			);
 			path = TPSetting;
@@ -367,8 +376,19 @@
 		5DE36F271FEFED3500741AD0 /* TPTools */ = {
 			isa = PBXGroup;
 			children = (
+				5DE36F2A1FF3D61B00741AD0 /* TPAppUtil.h */,
+				5DE36F2B1FF3D61B00741AD0 /* TPAppUtil.m */,
 			);
 			path = TPTools;
+			sourceTree = "<group>";
+		};
+		5DE36F2D1FF3D65E00741AD0 /* TPDataCnter */ = {
+			isa = PBXGroup;
+			children = (
+				5DE36F2E1FF3D66A00741AD0 /* TPDataCenter.h */,
+				5DE36F2F1FF3D66A00741AD0 /* TPDataCenter.m */,
+			);
+			path = TPDataCnter;
 			sourceTree = "<group>";
 		};
 		5DFECE7B1FD578AD00D194D9 = {
@@ -413,6 +433,7 @@
 		5DFECE9D1FD6CEAA00D194D9 /* TPPublic */ = {
 			isa = PBXGroup;
 			children = (
+				5DE36F2D1FF3D65E00741AD0 /* TPDataCnter */,
 				5DE36F271FEFED3500741AD0 /* TPTools */,
 				5DAF7B8E1FDA5EA3000F2A4E /* TPCategorys */,
 				5DAF7B8D1FDA5E86000F2A4E /* TPVendors */,
@@ -538,6 +559,7 @@
 				5D8ACBD71FE4CACD003985C3 /* 轮胎 英文版.mp3 in Resources */,
 				5D8ACBFB1FE6464B003985C3 /* TPVersionInformationVC.xib in Resources */,
 				5D8ACBD31FE4CACD003985C3 /* 俄语定稿.mp3 in Resources */,
+				5DE36F291FF12DDA00741AD0 /* TPSettingViewController.xib in Resources */,
 				5DFECE8F1FD578AD00D194D9 /* Main.storyboard in Resources */,
 				5D8ACBD51FE4CACD003985C3 /* 轮胎 中文版.mp3 in Resources */,
 			);
@@ -605,6 +627,8 @@
 				5DAF7BBA1FDD16D7000F2A4E /* TPBaseNavController.m in Sources */,
 				5DAF7BF11FDD4747000F2A4E /* UIViewExt.m in Sources */,
 				5DAF7BEE1FDD4747000F2A4E /* NSNumber+YYAdd.m in Sources */,
+				5DE36F301FF3D66A00741AD0 /* TPDataCenter.m in Sources */,
+				5DE36F2C1FF3D61B00741AD0 /* TPAppUtil.m in Sources */,
 				5DAF7BF81FDD4A8B000F2A4E /* TPToolView.m in Sources */,
 				5DAF7BF21FDD4747000F2A4E /* NSData+YYAdd.m in Sources */,
 				5DAF7C061FDEC864000F2A4E /* TPSettingViewController.m in Sources */,

@@ -9,10 +9,13 @@
 #import <Foundation/Foundation.h>
 
 
-
 extern NSString * AppLanguageString;
-
-
+extern NSString * TPTemperatureTypeKey;
+extern NSString * TPTirePressureTypeKey;
+extern NSString * TPWarningElectricKey;
+extern NSString * TPWarningTopTirepressureKey;
+extern NSString * TPWarningDownTirepressureKey;
+extern NSString * TPWarningTempratureKey;
 
 
 
