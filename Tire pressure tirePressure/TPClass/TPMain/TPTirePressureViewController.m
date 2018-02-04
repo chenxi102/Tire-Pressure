@@ -39,6 +39,10 @@
         @strong(self);
         [self loadData];
     }];
+    [[NSNotificationCenter defaultCenter] addObserverForName:SettingDataChangeNotify object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        @strong(self);
+        [self refreshDisplay:YES];
+    }];
 }
 
 // MARK: UI config
@@ -132,10 +136,24 @@
 
 // MARK: load Data
 - (void)loadData {
+    
+    // 1.请求接口 2.封装返回数据 3.判断是否需要闪烁或者弹出提示框
     self.leftFrontView.electric = 90;
     self.leftBackView.electric = 10;
     self.rightFrontView.electric = 50;
     self.rightBackView.electric = 2;
+    
+    self.leftFrontView.tirepressure = arc4random()%300;
+    self.leftBackView.tirepressure = arc4random()%300;
+    self.rightFrontView.tirepressure = arc4random()%300;
+    self.rightBackView.tirepressure = arc4random()%300;
+    
+    
+    self.leftFrontView.temprature = arc4random()%300;
+    self.leftBackView.temprature = arc4random()%300;
+    self.rightFrontView.temprature = arc4random()%300;
+    self.rightBackView.temprature = arc4random()%300;
+    [self showAlarm];
     [self refreshDisplay:YES];
 }
 
@@ -146,9 +164,12 @@
     [self.rightBackView refreshStatesWithDisInit:abool];
 }
 
+
 // MARK: function
 - (void)languageChanged {
     [self.toolView refreshLanguage];
 }
-
+- (void)showAlarm {
+    
+}
 @end

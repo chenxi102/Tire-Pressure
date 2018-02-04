@@ -9,7 +9,7 @@
 #import "TPConstString.h"
 
 
-
+NSString const * TPDataLockKey = @"TPDataLockKey";
 NSString const * TPTemperatureTypeKey = @"TPTemperatureTypeKey";
 NSString const * TPTirePressureTypeKey = @"TPTirePressureTypeKey";
 
@@ -21,4 +21,5 @@ NSString const * TPWarningTempratureKey = @"TPWarningTempratureKey";
 
 // notice
 NSString const * AppLanguageChangeNotify = @"AppLanguageChangeNotify";
+NSString const * SettingDataChangeNotify = @"SettingDataChangeNotify";
 

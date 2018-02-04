@@ -51,11 +51,14 @@ typedef NS_ENUM(NSInteger){
 @property (nonatomic, assign) TPTirePressureDataType tirePressureDataType;
 @property (nonatomic, assign) TPTemPeratureDataType temPeratureDataType;
 
+@property (nonatomic, assign) BOOL dataLock;
+
 
 + (instancetype)shareInstance ;
 
 - (float)convertEletric:(float)data;
-- (float)convertTirePressure:(float)data  outPutType:(TPTirePressureDataType)type;
-- (float)convertTemprature:(float)data  outPutType:(TPTemPeratureDataType)type;
-
+- (float)convertTirePressure:(float)data inPutType:(TPTirePressureDataType)inPutType outPutType:(TPTirePressureDataType)type;
+- (float)convertTemprature:(float)data inPutType:(TPTemPeratureDataType)inPutType outPutType:(TPTemPeratureDataType)type;
+- (NSString *)tempString;
+- (NSString *)tirePressureString;
 @end

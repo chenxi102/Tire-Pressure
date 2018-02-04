@@ -7,4 +7,6 @@ target 'Tire pressure tirePressure' do
 
   # Pods for Tire pressure tirePressure
   pod 'Masonry'
+  pod 'MBProgressHUD'
+
 end

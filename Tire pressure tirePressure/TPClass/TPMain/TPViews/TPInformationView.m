@@ -12,6 +12,7 @@
 {
     NSTimer * _timer;
     BOOL _timerGoing;
+    BOOL flashFlag ;
 }
 
 - (void)refreshStatesWithDisInit:(BOOL)abool {
@@ -63,7 +64,7 @@
         self.tempratureUnitLab.text = @"℃";
         self.tempratureNumLab.text = [NSString stringWithFormat:@"%d",self.temprature];
     } else {
-        int temp = [[TPDataCenter shareInstance] convertTemprature:self.temprature outPutType:TPTemperatureData_Fahrenheit];
+        int temp = [[TPDataCenter shareInstance] convertTemprature:self.temprature inPutType:TPTemperatureData_Centigrade outPutType:TPTemperatureData_Fahrenheit];
         self.tempratureUnitLab.text = @"℉";
         self.tempratureNumLab.text = [NSString stringWithFormat:@"%d", temp];
     }
@@ -76,11 +77,11 @@
         self.tirepressureNumLab.text = [NSString stringWithFormat:@"%d", self.tirepressure];
     }
     else if ([[TPDataCenter shareInstance] tirePressureDataType] == TPTirePressureData_Psi) {
-        int temp = [[TPDataCenter shareInstance] convertTirePressure:self.tirepressure outPutType:TPTirePressureData_Psi];
+        int temp = [[TPDataCenter shareInstance] convertTirePressure:self.tirepressure inPutType:TPTirePressureData_Bar outPutType:TPTirePressureData_Psi];
         self.tirepressureUnitLab.text = @"PSI";
         self.tirepressureNumLab.text = [NSString stringWithFormat:@"%d", temp];
     }else {
-        int temp = [[TPDataCenter shareInstance] convertTirePressure:self.tirepressure outPutType:TPTirePressureData_Kpa];
+        int temp = [[TPDataCenter shareInstance] convertTirePressure:self.tirepressure inPutType:TPTirePressureData_Bar outPutType:TPTirePressureData_Kpa];
         self.tirepressureUnitLab.text = @"kPa";
         self.tirepressureNumLab.text = [NSString stringWithFormat:@"%d", temp];
     }
@@ -104,22 +105,36 @@
     }
 }
 
+
 - (void)flash:(NSTimer *)timer {
     
-    if (self.tirepressure<WARNING_TIREPRESSURE) {
-        self.tirepressureNumLab.hidden = !self.tirepressureNumLab.hidden;
-        self.tirepressureUnitLab.hidden = !self.tirepressureUnitLab.hidden;
+    flashFlag = !flashFlag;
+    
+    // 胎压超过上限的闪烁
+    if (self.tirepressure>=[[TPDataCenter shareInstance] warningTopTirepressure]) {
+        self.tirepressureNumLab.hidden = !flashFlag;
+        self.tirepressureUnitLab.hidden = !flashFlag;
         self.tirepressureUnitLab.textColor = [UIColor redColor];
         self.tirepressureNumLab.textColor = [UIColor redColor];
-    }else {
+    }
+    // 胎压小于下限的闪烁
+    else if(self.tirepressure<=[[TPDataCenter shareInstance] warningDownTirepressure]) {
+        self.tirepressureNumLab.hidden = !flashFlag;
+        self.tirepressureUnitLab.hidden = !flashFlag;
+        self.tirepressureUnitLab.textColor = [UIColor redColor];
+        self.tirepressureNumLab.textColor = [UIColor redColor];
+    }
+    // 胎压正常
+    else {
         self.tirepressureNumLab.hidden = self.tirepressureUnitLab.hidden = NO;
         self.tirepressureNumLab.textColor = [UIColor whiteColor];
         self.tirepressureUnitLab.textColor = [UIColor lightGrayColor];
     }
     
-    if (self.temprature<WARNING_TIREPRESSURE) {
-        self.tempratureNumLab.hidden = !self.tempratureNumLab.hidden;
-        self.tempratureUnitLab.hidden = !self.tempratureUnitLab.hidden;
+    // 高温闪烁
+    if (self.temprature>[[TPDataCenter shareInstance] warningTemprature]) {
+        self.tempratureNumLab.hidden = !flashFlag;
+        self.tempratureUnitLab.hidden = !flashFlag;
         self.tempratureNumLab.textColor = [UIColor redColor];
         self.tempratureUnitLab.textColor = [UIColor redColor];
     }else {
@@ -128,8 +143,9 @@
         self.tempratureUnitLab.textColor = [UIColor yellowColor];
     }
     
+    // 低电闪烁
     if (self.electric < 10) {
-        self.electricImgV.hidden = !self.electricImgV.hidden;
+        self.electricImgV.hidden = !flashFlag;
     } else {
         self.electricImgV.hidden = NO;
     }

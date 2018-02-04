@@ -23,6 +23,11 @@
     return center;
 }
 
+- (void)setDataLock:(BOOL)dataLock {
+    [[NSUserDefaults standardUserDefaults] setInteger:dataLock forKey:TPDataLockKey];
+    [[NSUserDefaults standardUserDefaults]  synchronize];
+}
+
 - (void)setTemPeratureDataType:(TPTemPeratureDataType)temPeratureDataType {
     [[NSUserDefaults standardUserDefaults] setInteger:temPeratureDataType forKey:TPTemperatureTypeKey];
     [[NSUserDefaults standardUserDefaults]  synchronize];
@@ -39,23 +44,27 @@
 }
 
 - (void)setWarningTemprature:(NSInteger)warningTemprature {
-    NSInteger temp  = [self convertTemprature:warningTemprature outPutType:TPTemperatureData_Centigrade];
+    NSInteger temp  = [self convertTemprature:warningTemprature inPutType:self.temPeratureDataType outPutType:TPTemperatureData_Centigrade];
     [[NSUserDefaults standardUserDefaults] setInteger:temp forKey:TPWarningTempratureKey];
     [[NSUserDefaults standardUserDefaults]  synchronize];
 }
 
 - (void)setWarningTopTirepressure:(NSInteger)warningTopTirepressure {
-    NSInteger temp  = [self convertTirePressure:warningTopTirepressure outPutType:TPTirePressureData_Bar];
+    NSInteger temp  = [self convertTirePressure:warningTopTirepressure inPutType:self.tirePressureDataType outPutType:TPTirePressureData_Bar];
     [[NSUserDefaults standardUserDefaults] setInteger:temp forKey:TPWarningTopTirepressureKey];
     [[NSUserDefaults standardUserDefaults]  synchronize];
 }
 
 - (void)setWarningDownTirepressure:(NSInteger)warningDownTirepressure {
-    NSInteger temp  = [self convertTirePressure:warningDownTirepressure outPutType:TPTirePressureData_Bar];
+    NSInteger temp  = [self convertTirePressure:warningDownTirepressure inPutType:self.tirePressureDataType outPutType:TPTirePressureData_Bar];
     [[NSUserDefaults standardUserDefaults] setInteger:temp forKey:TPWarningDownTirepressureKey];
     [[NSUserDefaults standardUserDefaults]  synchronize];
 }
 
+- (BOOL)dataLock {
+    NSInteger interger = [[NSUserDefaults standardUserDefaults] integerForKey:TPDataLockKey];
+    return interger;
+}
 - (TPTemPeratureDataType)temPeratureDataType {
     NSInteger interger = [[NSUserDefaults standardUserDefaults] integerForKey:TPTemperatureTypeKey];
     return interger;
@@ -90,9 +99,9 @@
     return data;
 }
 
-- (float)convertTirePressure:(float)data  outPutType:(TPTirePressureDataType)type;{
+- (float)convertTirePressure:(float)data inPutType:(TPTirePressureDataType)inPutType outPutType:(TPTirePressureDataType)type{
     float TirePressure ;
-    switch (self.tirePressureDataType) {
+    switch (inPutType) {
         case TPTirePressureData_Bar:
         {
             if (type == TPTirePressureData_Bar || type == TPTirePressureData_Kg) {
@@ -152,9 +161,9 @@
     return TirePressure;
 }
 
-- (float)convertTemprature:(float)data outPutType:(TPTemPeratureDataType)type {
+- (float)convertTemprature:(float)data inPutType:(TPTemPeratureDataType)inPutType outPutType:(TPTemPeratureDataType)type {
     float Temprature ;
-    switch (self.temPeratureDataType) {
+    switch (inPutType) {
         case TPTemperatureData_Centigrade:
         {
             if (type == TPTemperatureData_Centigrade) {
@@ -179,5 +188,52 @@
     return Temprature;
 }
 
+- (NSString *)tempString {
+    NSString * temp;
+    switch (self.temPeratureDataType) {
+        case TPTemperatureData_Centigrade:
+        {
+            temp = @"℃";
+        }
+            break;
+        case TPTemperatureData_Fahrenheit:
+        {
+           temp = @"℉";
+        }
+            break;
+        default:
+            break;
+    }
+    return temp;
+}
+
+- (NSString *)tirePressureString {
+    NSString * temp;
+    switch (self.tirePressureDataType) {
+        case TPTirePressureData_Bar:
+        {
+            temp = @"Bar";
+        }
+            break;
+        case TPTirePressureData_Kg:
+        {
+            temp = @"kg/cm²";
+        }
+            break;
+        case TPTirePressureData_Psi:
+        {
+            temp = @"psi";
+        }
+            break;
+        case TPTirePressureData_Kpa:
+        {
+            temp = @"kPa";
+        }
+            break;
+        default:
+            break;
+    }
+    return temp;
+}
 
 @end

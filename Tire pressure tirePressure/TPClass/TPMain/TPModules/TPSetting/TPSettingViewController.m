@@ -34,11 +34,16 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *tire;
 @property (weak, nonatomic) IBOutlet UIButton *version;
+@property (weak, nonatomic) IBOutlet UIButton *lockBtn;
 
 @end
 
 @implementation TPSettingViewController
 - (void)didReceiveMemoryWarning {[super didReceiveMemoryWarning];}
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [self dataChangeNotice];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
 //    self.view.backgroundColor = [UIColor blackColor];
@@ -47,76 +52,93 @@
     [self languageChanged];
 }
 
+- (void)dataChangeNotice {
+    [[NSNotificationCenter defaultCenter] postNotificationName:SettingDataChangeNotify object:nil];
+}
+
 - (void)initData
 {
+    NSInteger  warningTopTirepressure  = [[TPDataCenter shareInstance] warningTopTirepressure];
+    NSInteger  warningDownTirepressure  = [[TPDataCenter shareInstance] warningDownTirepressure];
+    
     switch ([[TPDataCenter shareInstance] tirePressureDataType]) {
         case TPTirePressureData_Bar:
         {
             self.bar.selected = YES;
             self.kgcm.selected = self.psi.selected = self.kPa.selected = NO;
-            self.topWarningSlider.value = [[TPDataCenter shareInstance] warningTopTirepressure];
-            self.bottomWarningSlider.value = [[TPDataCenter shareInstance] warningDownTirepressure];
-            self.topWarningNumLab.text = [NSString stringWithFormat:@"%d bar", (int)self.topWarningSlider.value];
-            self.bottomWarningNumLab.text = [NSString stringWithFormat:@"%d bar", (int)self.bottomWarningSlider.value];
+            NSInteger  __warningTopTirepressure  =  [[TPDataCenter shareInstance] convertTirePressure:warningTopTirepressure inPutType:TPTirePressureData_Bar outPutType:TPTirePressureData_Bar];
+            NSInteger  __warningDownTirepressure  = [[TPDataCenter shareInstance] convertTirePressure:warningDownTirepressure inPutType:TPTirePressureData_Bar outPutType:TPTirePressureData_Bar];
+            self.topWarningSlider.value = __warningTopTirepressure;
+            self.bottomWarningSlider.value = __warningDownTirepressure;
+            self.topWarningNumLab.text = [NSString stringWithFormat:@"%d bar", (int)__warningTopTirepressure];
+            self.bottomWarningNumLab.text = [NSString stringWithFormat:@"%d bar", (int)__warningDownTirepressure];
         }
             break;
         case TPTirePressureData_Kg:
         {
             self.kgcm.selected = YES;
             self.bar.selected = self.psi.selected = self.kPa.selected = NO;
-            self.topWarningSlider.value = [[TPDataCenter shareInstance] warningTopTirepressure];
-            self.bottomWarningSlider.value = [[TPDataCenter shareInstance] warningDownTirepressure];
-            self.topWarningNumLab.text = [NSString stringWithFormat:@"%d kg/cm²", (int)self.topWarningSlider.value];
-            self.bottomWarningNumLab.text = [NSString stringWithFormat:@"%d kg/cm²", (int)self.bottomWarningSlider.value];
+            NSInteger  __warningTopTirepressure  =  [[TPDataCenter shareInstance] convertTirePressure:warningTopTirepressure inPutType:TPTirePressureData_Bar outPutType:TPTirePressureData_Kg];
+            NSInteger  __warningDownTirepressure  = [[TPDataCenter shareInstance] convertTirePressure:warningDownTirepressure inPutType:TPTirePressureData_Bar outPutType:TPTirePressureData_Kg];
+            self.topWarningSlider.value = __warningTopTirepressure;
+            self.bottomWarningSlider.value = __warningDownTirepressure;
+            self.topWarningNumLab.text = [NSString stringWithFormat:@"%d kg/cm²", (int)__warningTopTirepressure];
+            self.bottomWarningNumLab.text = [NSString stringWithFormat:@"%d kg/cm²", (int)__warningDownTirepressure];
         }
             break;
         case TPTirePressureData_Kpa:
         {
             self.kPa.selected = YES;
             self.bar.selected = self.psi.selected = self.kgcm.selected = NO;
-            self.topWarningSlider.value = [[TPDataCenter shareInstance] convertTirePressure:[[TPDataCenter shareInstance] warningTopTirepressure] outPutType:TPTirePressureData_Kpa];
-            self.bottomWarningSlider.value = [[TPDataCenter shareInstance] convertTirePressure:[[TPDataCenter shareInstance] warningDownTirepressure] outPutType:TPTirePressureData_Kpa];
-            self.topWarningNumLab.text = [NSString stringWithFormat:@"%d kPa", (int)self.topWarningSlider.value];
-            self.bottomWarningNumLab.text = [NSString stringWithFormat:@"%d kPa", (int)self.bottomWarningSlider.value];
+            NSInteger  __warningTopTirepressure = [[TPDataCenter shareInstance] convertTirePressure:warningTopTirepressure inPutType:TPTirePressureData_Bar outPutType:TPTirePressureData_Kpa];
+            NSInteger  __warningDownTirepressure = [[TPDataCenter shareInstance] convertTirePressure:warningDownTirepressure inPutType:TPTirePressureData_Bar outPutType:TPTirePressureData_Kpa];
+            self.topWarningSlider.value = __warningTopTirepressure;
+            self.bottomWarningSlider.value = __warningDownTirepressure;
+            self.topWarningNumLab.text = [NSString stringWithFormat:@"%d kPa", (int)__warningTopTirepressure];
+            self.bottomWarningNumLab.text = [NSString stringWithFormat:@"%d kPa", (int)__warningDownTirepressure];
         }
             break;
         case TPTirePressureData_Psi:
         {
             self.psi.selected = YES;
             self.bar.selected = self.kPa.selected = self.kgcm.selected = NO;
-            self.topWarningSlider.value = [[TPDataCenter shareInstance] convertTirePressure:[[TPDataCenter shareInstance] warningTopTirepressure] outPutType:TPTirePressureData_Psi];
-            self.bottomWarningSlider.value = [[TPDataCenter shareInstance] convertTirePressure:[[TPDataCenter shareInstance] warningDownTirepressure] outPutType:TPTirePressureData_Psi];
-            self.topWarningNumLab.text = [NSString stringWithFormat:@"%d psi", (int)self.topWarningSlider.value];
-            self.bottomWarningNumLab.text = [NSString stringWithFormat:@"%d psi", (int)self.bottomWarningSlider.value];
+            NSInteger  __warningTopTirepressure = [[TPDataCenter shareInstance] convertTirePressure:warningTopTirepressure inPutType:TPTirePressureData_Bar outPutType:TPTirePressureData_Psi];
+            NSInteger  __warningDownTirepressure = [[TPDataCenter shareInstance] convertTirePressure:warningDownTirepressure inPutType:TPTirePressureData_Bar outPutType:TPTirePressureData_Psi];
+            self.topWarningSlider.value = __warningTopTirepressure;
+            self.bottomWarningSlider.value = __warningDownTirepressure;
+            self.topWarningNumLab.text = [NSString stringWithFormat:@"%d psi", (int)__warningTopTirepressure];
+            self.bottomWarningNumLab.text = [NSString stringWithFormat:@"%d psi", (int)__warningDownTirepressure];
         }
             break;
         default:
             break;
     }
     
+    NSInteger  warningTemprature = [[TPDataCenter shareInstance] warningTemprature];
     switch ([[TPDataCenter shareInstance] temPeratureDataType]) {
         case TPTemperatureData_Centigrade:
         {
             self.sheshidu.selected = YES;
             self.huashidu.selected = NO;
-            self.teperatureSlider.value = [[TPDataCenter shareInstance] convertTemprature:[[TPDataCenter shareInstance] warningTemprature] outPutType:TPTemperatureData_Centigrade];
-            self.teperatureNumLab.text = [NSString stringWithFormat:@"%d ℃", (int)self.teperatureSlider.value];
+            NSInteger  __warningTemprature = [[TPDataCenter shareInstance] convertTemprature:warningTemprature inPutType:TPTemperatureData_Centigrade outPutType:TPTemperatureData_Centigrade];
+            self.teperatureSlider.value = __warningTemprature ;
+            self.teperatureNumLab.text = [NSString stringWithFormat:@"%d ℃", (int)__warningTemprature];
         }
             break;
         case TPTemperatureData_Fahrenheit:
         {
             self.sheshidu.selected = NO;
             self.huashidu.selected = YES;
-            self.teperatureSlider.value = [[TPDataCenter shareInstance] convertTemprature:[[TPDataCenter shareInstance] warningTemprature] outPutType:TPTemperatureData_Fahrenheit];
-            self.teperatureNumLab.text = [NSString stringWithFormat:@"%d ℉", (int)self.teperatureSlider.value];
+            NSInteger  __warningTemprature = [[TPDataCenter shareInstance] convertTemprature:warningTemprature inPutType:TPTemperatureData_Centigrade outPutType:TPTemperatureData_Fahrenheit];
+            self.teperatureSlider.value = __warningTemprature ;
+            self.teperatureNumLab.text = [NSString stringWithFormat:@"%d ℉", (int)__warningTemprature];
         }
             break;
         default:
             break;
     }
     
-    
-    
+    self.lockBtn.selected = [[TPDataCenter shareInstance] dataLock];
 }
 
 - (void)languageChanged {
@@ -132,46 +154,79 @@
 }
 ///
 - (IBAction)psi:(id)sender {
+    if ([[TPDataCenter shareInstance] dataLock]) {
+        return;
+    }
     [[TPDataCenter shareInstance] setTirePressureDataType:TPTirePressureData_Psi];
     [self initData];
 }
 - (IBAction)abr:(id)sender {
+    if ([[TPDataCenter shareInstance] dataLock]) {
+        return;
+    }
     [[TPDataCenter shareInstance] setTirePressureDataType:TPTirePressureData_Bar];
     [self initData];
 }
 - (IBAction)kg:(id)sender {
+    if ([[TPDataCenter shareInstance] dataLock]) {
+        return;
+    }
     [[TPDataCenter shareInstance] setTirePressureDataType:TPTirePressureData_Kg];
     [self initData];
 }
 - (IBAction)kpa:(id)sender {
+    if ([[TPDataCenter shareInstance] dataLock]) {
+        return;
+    }
     [[TPDataCenter shareInstance] setTirePressureDataType:TPTirePressureData_Kpa];
     [self initData];
 }
 
 ///
 - (IBAction)uplimit:(id)sender {
+    if ([[TPDataCenter shareInstance] dataLock]) {
+        [self initData];
+        return;
+    }
     UISlider * slider = (UISlider *)sender;
     [[TPDataCenter shareInstance] setWarningTopTirepressure:slider.value];
-    self.topWarningNumLab.text = [NSString stringWithFormat:@"%d", (int)self.topWarningSlider.value];
+    self.topWarningNumLab.text = [NSString stringWithFormat:@"%d %@", (int)self.topWarningSlider.value, [[TPDataCenter shareInstance] tirePressureString]];
 }
 - (IBAction)dowmlimit:(id)sender {
+    if ([[TPDataCenter shareInstance] dataLock]) {
+        [self initData];
+        return;
+    }
     UISlider * slider = (UISlider *)sender;
     [[TPDataCenter shareInstance] setWarningDownTirepressure:slider.value];
-    self.bottomWarningNumLab.text = [NSString stringWithFormat:@"%d", (int)self.bottomWarningSlider.value];
+    self.bottomWarningNumLab.text = [NSString stringWithFormat:@"%d %@", (int)self.bottomWarningSlider.value, [[TPDataCenter shareInstance] tirePressureString]];
 }
 
 ///
 - (IBAction)sheshidu:(id)sender {
+    if ([[TPDataCenter shareInstance] dataLock]) {
+        return;
+    }
     [[TPDataCenter shareInstance] setTemPeratureDataType:(TPTemperatureData_Centigrade)];
     [self initData];
 }
 - (IBAction)huashidu:(id)sender {
+    if ([[TPDataCenter shareInstance] dataLock]) {
+        return;
+    }
     [[TPDataCenter shareInstance] setTemPeratureDataType:(TPTemperatureData_Fahrenheit)];
     [self initData];
 }
 
 ///
 - (IBAction)temperature:(id)sender {
+    if ([[TPDataCenter shareInstance] dataLock]) {
+        [self initData];
+        return;
+    }
+    UISlider * slider = (UISlider *)sender;
+    [[TPDataCenter shareInstance] setWarningTemprature:slider.value];
+    self.teperatureNumLab.text = [NSString stringWithFormat:@"%d %@", (int)self.teperatureSlider.value, [[TPDataCenter shareInstance] tempString]];
 }
 
 ///
@@ -184,5 +239,16 @@
     TPBaseViewController * vc = [cls new];
     [self.navigationController pushViewController:vc animated:YES];
 }
+
+- (IBAction)lockAction:(id)sender {
+    UIButton * btn = (UIButton *)sender;
+    btn.selected = !btn.selected;
+    [[TPDataCenter shareInstance] setDataLock:btn.selected];
+}
+
+- (void)showAlertWithMessage {
+    
+}
+
 
 @end

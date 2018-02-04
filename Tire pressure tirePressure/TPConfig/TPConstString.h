@@ -10,6 +10,7 @@
 
 
 extern NSString * AppLanguageString;
+extern NSString * TPDataLockKey;
 extern NSString * TPTemperatureTypeKey;
 extern NSString * TPTirePressureTypeKey;
 extern NSString * TPWarningElectricKey;
@@ -22,3 +23,4 @@ extern NSString * TPWarningTempratureKey;
 
 // notice
 extern NSString * AppLanguageChangeNotify;
+extern NSString * SettingDataChangeNotify;
