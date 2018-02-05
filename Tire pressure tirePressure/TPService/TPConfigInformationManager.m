@@ -11,12 +11,19 @@
 
 @implementation TPConfigInformationManager
 
++ (instancetype)shareInstance {
+    static dispatch_once_t onceToken;
+    static TPConfigInformationManager * single;
+    dispatch_once(&onceToken, ^{
+        single = [TPConfigInformationManager new];
+    });
+    return single;
+}
+
 @end
 
 
-
-
-
 @implementation TPConfigInfo
+
 
 @end

@@ -23,30 +23,40 @@ typedef NS_ENUM(NSInteger){
     TPTirePressureData_Psi
 }TPTirePressureDataType;
 
+typedef NS_ENUM(NSInteger){
+    TPMachineState_offline ,  //未获取
+    TPMachineState_normal ,   //正常态
+    TPMachineState_destroy    //宕机中
+}TPMachineState;
 
 @interface TPDataCenter : NSObject
 
+// 机器状态
+@property (nonatomic, assign) TPMachineState tPMachineState;
 
+
+// 机器数据
 @property (nonatomic, assign) NSInteger leftFrontelectric;
 @property (nonatomic, assign) NSInteger leftBackelectric;
 @property (nonatomic, assign) NSInteger rightFrontelectric;
 @property (nonatomic, assign) NSInteger rightBackelectric;
-@property (nonatomic, assign) NSInteger warningElectric;
-
 
 @property (nonatomic, assign) NSInteger leftFronttirepressure;
 @property (nonatomic, assign) NSInteger leftBacktirepressure;
 @property (nonatomic, assign) NSInteger rightFronttirepressure;
 @property (nonatomic, assign) NSInteger rightBacktirepressure;
-@property (nonatomic, assign) NSInteger warningTopTirepressure;
-@property (nonatomic, assign) NSInteger warningDownTirepressure;
 
 @property (nonatomic, assign) NSInteger leftFronttemprature;
 @property (nonatomic, assign) NSInteger leftBacktemprature;
 @property (nonatomic, assign) NSInteger rightFronttemprature;
 @property (nonatomic, assign) NSInteger rightBacktemprature;
-@property (nonatomic, assign) NSInteger warningTemprature;
 
+
+// 设置的缓存数据
+@property (nonatomic, assign) NSInteger warningElectric;
+@property (nonatomic, assign) NSInteger warningTopTirepressure;
+@property (nonatomic, assign) NSInteger warningDownTirepressure;
+@property (nonatomic, assign) NSInteger warningTemprature;
 
 @property (nonatomic, assign) TPTirePressureDataType tirePressureDataType;
 @property (nonatomic, assign) TPTemPeratureDataType temPeratureDataType;

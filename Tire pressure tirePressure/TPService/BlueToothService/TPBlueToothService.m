@@ -11,17 +11,17 @@
 
 + (CBUUID *) ServiceUUID
 {
-    return [CBUUID UUIDWithString:@"FFA0"];
+    return [CBUUID UUIDWithString:@"18F0"]; // 1802 1803 1804 18F0
 }
 
 + (CBUUID *) ValueCharacteristicUUID
 {
-    return [CBUUID UUIDWithString:@"FFA1"];
+    return [CBUUID UUIDWithString:@"2AF1"];
 }
 
 + (CBUUID *) StateCharacteristicUUID
 {
-    return [CBUUID UUIDWithString:@"FFA2"];
+    return [CBUUID UUIDWithString:@"2AF0"];
 }
 
 + (instancetype)shareInstance {
@@ -56,29 +56,29 @@
 -(void) writeData:(NSData *)data res:(void(^)(NSData *data))res
 {
     self.blueToothRes = res;
-    
-    Byte header[]={0xAA};
-    Byte footer[]={0x55};
-    // 加头尾
-    NSMutableData * mutData = [NSMutableData dataWithBytes:header length:sizeof(header)];
-    [mutData appendData:data];
-    NSData *footerdata = [NSData dataWithBytes:footer length:sizeof(footer)];
-    [mutData appendData:footerdata];
+//
+//    Byte header[]={0xAA};
+//    Byte footer[]={0x55};
+//    // 加头尾
+//    NSMutableData * mutData = [NSMutableData dataWithBytes:header length:sizeof(header)];
+//    [mutData appendData:data];
+//    NSData *footerdata = [NSData dataWithBytes:footer length:sizeof(footer)];
+//    [mutData appendData:footerdata];
     //以20字节长度分包
-    long count = mutData.length/20;
-    int i = 0;
-    NSData * _temp;
-    while (mutData) {
-        
-        if (i == count) {
-            _temp  = [mutData subdataWithRange:NSMakeRange(20*i, mutData.length - 20*i)];
-        }else if (i < count) {
-            _temp  = [mutData subdataWithRange:NSMakeRange(20*i, 20)];
-        }else break;
-        
-        i++;
-        [self.peripheral writeValue:_temp forCharacteristic:self.characteristic type:CBCharacteristicWriteWithResponse];
-    }
+//    long count = mutData.length/20;
+//    int i = 0;
+//    NSData * _temp;
+//    while (data) {
+//
+//        if (i == count) {
+//            _temp  = [mutData subdataWithRange:NSMakeRange(20*i, mutData.length - 20*i)];
+//        }else if (i < count) {
+//            _temp  = [mutData subdataWithRange:NSMakeRange(20*i, 20)];
+//        }else break;
+//
+//        i++;
+        [self.peripheral writeValue:data forCharacteristic:self.characteristic type:CBCharacteristicWriteWithoutResponse];
+//    }
 }
 
 #pragma mark - CBCentralManager Delegates
@@ -87,7 +87,7 @@
 {
     //TODO: to handle the state updates
     switch (central.state) {
-        case CBCentralManagerStatePoweredOff:
+        case CBManagerStatePoweredOff:
             NSLog(@"没有打开蓝牙");
             break;
         default:
@@ -101,10 +101,11 @@
  */
 - (void) centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary *)advertisementData RSSI:(NSNumber *)RSSI
 {
-    NSLog(@"Did discover peripheral %@", peripheral.name);
+    NSLog(@"Did discover peripheral %@", peripheral.name );
 // 0000ffa0-0000-1000-8000-00805f9b34fb
 // 78402455-6913-4707-8782-73FD39964D00
-    if ([peripheral.name rangeOfString:@"smartair"].location != NSNotFound || [peripheral.name rangeOfString:@"hum"].location != NSNotFound) { //smartair-1BA3C  hum3C
+// 000018f0-0000-1000-8000-00805f9b34fb
+    if ([peripheral.identifier.UUIDString rangeOfString:@"000018f0-0000-1000-8000-00805f9b34fb"].location != NSNotFound||[peripheral.name rangeOfString:@"BCM"].location != NSNotFound) {
         self.peripheral = peripheral;
        [self.manager connectPeripheral:self.peripheral options:nil];
     }
@@ -181,7 +182,7 @@
             self.boardValueCharacteristic = c;
             const uint8_t *bytes = c.value.bytes;
             NSLog(@"%s", bytes);
-//            [self.peripheral readValueForCharacteristic:self.boardValueCharacteristic];
+            [self.peripheral readValueForCharacteristic:self.boardValueCharacteristic];
 //            [self.peripheral setNotifyValue:YES forCharacteristic:self.boardValueCharacteristic];
             if (self.connectRes) {
                 self.connectRes(YES);

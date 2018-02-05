@@ -16,6 +16,7 @@
     dispatch_once(&onceToken, ^{
         if (!center) {
             center = [TPDataCenter new];
+            center.tPMachineState = TPMachineState_deinit;
             center.tirePressureDataType = TPTirePressureData_Bar;
             center.temPeratureDataType = TPTemperatureData_Centigrade;
         }

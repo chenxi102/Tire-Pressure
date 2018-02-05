@@ -15,6 +15,9 @@
 + (instancetype)shareInstance ;
 - (void)config ;
 
+// 检测机器状态
+- (void)checkMachineWorkState ;
 
+- (void)queryTirePressureDataRes:(void(^)(NSData *))res;
 
 @end

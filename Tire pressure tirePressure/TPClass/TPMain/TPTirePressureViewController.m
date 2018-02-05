@@ -47,6 +47,7 @@
 
 // MARK: UI config
 - (void)normalUiconfig {
+    
     self.navigationItem.titleView = [[UIImageView  alloc]initWithImage:[UIImage imageNamed:@"logo"]];
     UIImageView * imgv = [UIImageView new];
     [imgv setImage:[UIImage imageNamed:@"車子"]];
@@ -148,11 +149,11 @@
     self.rightFrontView.tirepressure = arc4random()%300;
     self.rightBackView.tirepressure = arc4random()%300;
     
-    
     self.leftFrontView.temprature = arc4random()%300;
     self.leftBackView.temprature = arc4random()%300;
     self.rightFrontView.temprature = arc4random()%300;
     self.rightBackView.temprature = arc4random()%300;
+    
     [self showAlarm];
     [self refreshDisplay:YES];
 }

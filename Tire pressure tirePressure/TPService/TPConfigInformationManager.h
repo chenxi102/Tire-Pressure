@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TPConfigInfo : NSObject
 
+
+@interface TPConfigInfo : NSObject
+@property (nonatomic, assign) TPMachineState tPMachineState;
 @end
 
 
 @interface TPConfigInformationManager : NSObject
-
-
-
+@property (nonatomic, strong) TPConfigInfo *machineInfo ;
 @end
