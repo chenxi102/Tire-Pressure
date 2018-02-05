@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "TPTirePressureViewModel.h"
+#include "tire_pressure.h"
 @interface TPInformationView : UIView
 
 @property (nonatomic, strong) UIImageView * electricImgV;       // 电量图
@@ -16,6 +17,8 @@
 @property (nonatomic, strong) UILabel * tempratureNumLab;       // 温度值
 @property (nonatomic, strong) UILabel * tempratureUnitLab;      // 温度单位
 
+@property (nonatomic, assign) Tire tire;
+@property (nonatomic, assign) TireState tireState;
 @property (nonatomic, assign) int electric;
 @property (nonatomic, assign) int tirepressure;
 @property (nonatomic, assign) int temprature;

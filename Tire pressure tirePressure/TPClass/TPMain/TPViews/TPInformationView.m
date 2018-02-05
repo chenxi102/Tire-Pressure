@@ -8,6 +8,7 @@
 
 #import "TPInformationView.h"
 
+
 @implementation TPInformationView
 {
     NSTimer * _timer;
@@ -15,7 +16,7 @@
     BOOL flashFlag ;
 }
 
-- (void)refreshStatesWithDisInit:(BOOL)abool {
+- (void)refreshStatesWithDisInit:(BOOL)abool{
     
     if (!abool) {
         _timerGoing = NO;

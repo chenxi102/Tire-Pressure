@@ -42,6 +42,8 @@
 - (void)didReceiveMemoryWarning {[super didReceiveMemoryWarning];}
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
+    [TPBlueToothManager shareInstance] setAlarmTirePressure:<#(AlarmType)#> value:<#(int)#> Res:<#^(BOOL)res#>
+    
     [self dataChangeNotice];
 }
 - (void)viewDidLoad {

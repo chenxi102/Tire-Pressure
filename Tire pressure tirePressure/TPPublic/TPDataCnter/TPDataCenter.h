@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#include "tire_pressure.h"
+
 #define WARNING_TIREPRESSURE     28     // bar
 #define WARNING_TEMPERATE        26     // 摄氏度
 
@@ -41,6 +43,11 @@ typedef NS_ENUM(NSInteger){
 @property (nonatomic, assign) NSInteger rightFrontelectric;
 @property (nonatomic, assign) NSInteger rightBackelectric;
 
+@property (nonatomic, assign) TireState leftFrontTireState;
+@property (nonatomic, assign) TireState leftBackTireState;
+@property (nonatomic, assign) TireState rightFrontTireState;
+@property (nonatomic, assign) TireState rightBackTireState;
+
 @property (nonatomic, assign) NSInteger leftFronttirepressure;
 @property (nonatomic, assign) NSInteger leftBacktirepressure;
 @property (nonatomic, assign) NSInteger rightFronttirepressure;
@@ -52,7 +59,7 @@ typedef NS_ENUM(NSInteger){
 @property (nonatomic, assign) NSInteger rightBacktemprature;
 
 
-// 设置的缓存数据
+// 设置的缓存数据 机器备份了
 @property (nonatomic, assign) NSInteger warningElectric;
 @property (nonatomic, assign) NSInteger warningTopTirepressure;
 @property (nonatomic, assign) NSInteger warningDownTirepressure;

@@ -19,5 +19,7 @@
 #import "TPButton.h"
 #import "TPDialogView.h"
 #import "TPDataCenter.h"
+#import "TPBlueToothManager.h"
+#include "tire_pressure.h"
 
 #endif /* TirePressure_pch */

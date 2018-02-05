@@ -21,7 +21,6 @@
     UIWindow * window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     
     [[TPLanguageManager sharedInstance] config];
-    [[TPBlueToothManager shareInstance] config];
     TPTirePressureViewController * vc = [TPTirePressureViewController new];
     window.rootViewController = [[TPBaseNavController alloc] initWithRootViewController:vc];
     self.window = window;

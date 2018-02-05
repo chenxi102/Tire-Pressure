@@ -51,8 +51,8 @@ unsigned char * parsePacket(packet pack){
     int length = pack.header.length;
     unsigned char* bytes = (unsigned char *)malloc(length);
     bytes[0] = pack.header.head;
-    bytes[1] = pack.header.from;
-    bytes[2] = pack.header.to;
+    bytes[1] = pack.header.to;
+    bytes[2] = pack.header.from;
     bytes[3] = pack.header.length;
     bytes[4] = pack.header.cmd;
     bytes[5] = pack.header.childCmd;
@@ -153,6 +153,7 @@ resPacket* parseBytes(Command command,unsigned char * bytes,int length){
                 resPack->result = success;
                 resPack->tires[0].tire = getTire(bytes[6]);
                 resPack->tires[0].id = charToShort16(bytes[7],bytes[8]);
+                printf("id : 0x%x",resPack->tires[0].id);
                 resPack->tires[0].press = bytes[9];
                 resPack->tires[0].temp = bytes[10];
                 resPack->tires[0].tireState = getTireState(bytes[12]);

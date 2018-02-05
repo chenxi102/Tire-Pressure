@@ -16,7 +16,7 @@
     dispatch_once(&onceToken, ^{
         if (!center) {
             center = [TPDataCenter new];
-            center.tPMachineState = TPMachineState_deinit;
+            center.tPMachineState = TPMachineState_offline;
             center.tirePressureDataType = TPTirePressureData_Bar;
             center.temPeratureDataType = TPTemperatureData_Centigrade;
         }
@@ -51,13 +51,13 @@
 }
 
 - (void)setWarningTopTirepressure:(NSInteger)warningTopTirepressure {
-    NSInteger temp  = [self convertTirePressure:warningTopTirepressure inPutType:self.tirePressureDataType outPutType:TPTirePressureData_Bar];
+    NSInteger temp  = [self convertTirePressure:warningTopTirepressure inPutType:self.tirePressureDataType outPutType:TPTirePressureData_Bar]/10.;
     [[NSUserDefaults standardUserDefaults] setInteger:temp forKey:TPWarningTopTirepressureKey];
     [[NSUserDefaults standardUserDefaults]  synchronize];
 }
 
 - (void)setWarningDownTirepressure:(NSInteger)warningDownTirepressure {
-    NSInteger temp  = [self convertTirePressure:warningDownTirepressure inPutType:self.tirePressureDataType outPutType:TPTirePressureData_Bar];
+    NSInteger temp  = [self convertTirePressure:warningDownTirepressure inPutType:self.tirePressureDataType outPutType:TPTirePressureData_Bar]/10.;
     [[NSUserDefaults standardUserDefaults] setInteger:temp forKey:TPWarningDownTirepressureKey];
     [[NSUserDefaults standardUserDefaults]  synchronize];
 }

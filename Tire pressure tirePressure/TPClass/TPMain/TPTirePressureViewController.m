@@ -35,10 +35,19 @@
     [self normalUiconfig];
     [self toolSetup];
     @weak(self);
-    _DataTimer = [NSTimer scheduledTimerWithTimeInterval:5 repeats:YES block:^(NSTimer * _Nonnull timer) {
+    
+    [[TPBlueToothManager shareInstance] connectRes:^(BOOL result) {
         @strong(self);
-        [self loadData];
+        if (result) {
+            [self loadData];
+        }
     }];
+//    _DataTimer = [NSTimer scheduledTimerWithTimeInterval:5 repeats:YES block:^(NSTimer * _Nonnull timer) {
+//        @strong(self);
+//        if ([TPDataCenter shareInstance].tPMachineState == TPMachineState_normal) {
+//            [self loadData];
+//        }
+//    }];
     [[NSNotificationCenter defaultCenter] addObserverForName:SettingDataChangeNotify object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
         @strong(self);
         [self refreshDisplay:YES];
@@ -59,6 +68,7 @@
     __weak typeof(self) wkself = self;
     @weak(imgv);
     _leftFrontView = [TPInformationView new];
+    _leftFrontView.tire = LeftFront;
     [self.view addSubview:_leftFrontView];
     [_leftFrontView mas_makeConstraints:^(MASConstraintMaker *make) {
         @strong(imgv);
@@ -70,6 +80,7 @@
     
     
     _leftBackView = [TPInformationView new];
+    _leftBackView.tire = LeftBack;
     [self.view addSubview:_leftBackView];
     [_leftBackView mas_makeConstraints:^(MASConstraintMaker *make) {
         __strong typeof(wkself) self = wkself;
@@ -81,6 +92,7 @@
     }];
     
     _rightFrontView = [TPInformationView new];
+    _rightFrontView.tire = RightFront;
     [self.view addSubview:_rightFrontView];
     [_rightFrontView mas_makeConstraints:^(MASConstraintMaker *make) {
         @strong(imgv);
@@ -91,6 +103,7 @@
     }];
     
     _rightBackView = [TPInformationView new];
+    _rightBackView.tire = RightBack;
     [self.view addSubview:_rightBackView];
     [_rightBackView mas_makeConstraints:^(MASConstraintMaker *make) {
         __strong typeof(wkself) self = wkself;
@@ -138,24 +151,41 @@
 // MARK: load Data
 - (void)loadData {
     
-    // 1.请求接口 2.封装返回数据 3.判断是否需要闪烁或者弹出提示框
-    self.leftFrontView.electric = 90;
-    self.leftBackView.electric = 10;
-    self.rightFrontView.electric = 50;
-    self.rightBackView.electric = 2;
-    
-    self.leftFrontView.tirepressure = arc4random()%300;
-    self.leftBackView.tirepressure = arc4random()%300;
-    self.rightFrontView.tirepressure = arc4random()%300;
-    self.rightBackView.tirepressure = arc4random()%300;
-    
-    self.leftFrontView.temprature = arc4random()%300;
-    self.leftBackView.temprature = arc4random()%300;
-    self.rightFrontView.temprature = arc4random()%300;
-    self.rightBackView.temprature = arc4random()%300;
-    
-    [self showAlarm];
-    [self refreshDisplay:YES];
+    [[TPBlueToothManager shareInstance] getAlarmTirePressureRes:^(BOOL abool)
+    {
+        if (abool) {
+            
+            [[TPBlueToothManager shareInstance] queryTirePressureDataRes:^(BOOL abool) {
+                if (abool) {
+                    // 1.请求接口 2.封装返回数据 3.判断是否需要闪烁或者弹出提示框
+                    self.leftFrontView.electric = 90;
+                    self.leftBackView.electric = 10;
+                    self.rightFrontView.electric = 50;
+                    self.rightBackView.electric = 2;
+                    
+                    self.leftFrontView.tirepressure = (int)[TPDataCenter shareInstance].leftFronttirepressure;
+                    self.leftBackView.tirepressure = (int)[TPDataCenter shareInstance].leftBacktirepressure;
+                    self.rightFrontView.tirepressure = (int)[TPDataCenter shareInstance].rightFronttirepressure;
+                    self.rightBackView.tirepressure = (int)[TPDataCenter shareInstance].rightBacktirepressure;
+                    
+                    self.leftFrontView.temprature = (int)[TPDataCenter shareInstance].leftFronttemprature;
+                    self.leftBackView.temprature = (int)[TPDataCenter shareInstance].leftBacktemprature;
+                    self.rightFrontView.temprature = (int)[TPDataCenter shareInstance].rightFronttemprature;
+                    self.rightBackView.temprature = (int)[TPDataCenter shareInstance].rightBacktemprature;
+                    
+                    self.leftFrontView.tireState = (int)[TPDataCenter shareInstance].leftFrontTireState;
+                    self.leftBackView.tireState = (int)[TPDataCenter shareInstance].leftBackTireState;
+                    self.rightFrontView.tireState = (int)[TPDataCenter shareInstance].rightFrontTireState;
+                    self.rightBackView.tireState = (int)[TPDataCenter shareInstance].rightBackTireState;
+                }
+                
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.01 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [self showAlarm];
+                    [self refreshDisplay:YES];
+                });
+            }];
+        }
+    }];
 }
 
 - (void)refreshDisplay:(BOOL)abool {
@@ -170,6 +200,8 @@
 - (void)languageChanged {
     [self.toolView refreshLanguage];
 }
+
+#warning 每个轮子都有状态 需要判断提示 @姜德森
 - (void)showAlarm {
     
 }
